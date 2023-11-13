@@ -1,9 +1,360 @@
-# Metodología
+# Estrategia Metodológica
 
 ## Datos
 
+Se utilizarán datos de la muestra chilena de la séptima ola de la Encuesta Mundial de Valores, que es la más reciente disponible hasta la fecha. El trabajo de campo se llevó a cabo en los meses de enero y febrero de 2018, con una muestra compuesta por 1.000 personas mayores de 18 años, seleccionadas mediante un proceso de muestreo multietápico de tres niveles. La muestra es representativa a nivel nacional, así como de áreas urbanas y rurales. En la Tabla 3.1 se resumen algunas de las principales variables de caracterización de la base de datos. 
+
+```{r, include=F, echo=F}
+df %>% select(c(D_INTERVIEW, H_URBRURAL, Q260, Q262, Q275R, Q287, Q289))
+
+zona <- df %>% group_by(H_URBRURAL) %>% summarise(D_INTERVIEW= n()) %>%
+  mutate(Indicador = case_when(H_URBRURAL== 1 ~"Urbano",
+                         H_URBRURAL==2 ~"Rural"),
+         n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
+zona
+
+sexo <- df %>% group_by(Q260) %>% summarise(D_INTERVIEW= n()) %>%
+  mutate(Indicador = case_when(Q260== 1 ~"Hombre",
+                         Q260==2 ~"Mujer"),
+         n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
+sexo
+
+edad <- df %>% mutate(Indicador= case_when(Q262<=29 ~ "18 a 29 años",
+                                     Q262>29 & Q262<=49 ~ "30 a 49 años",
+                                     Q262>49 ~ "Más de 50 años")) %>% na.omit() %>%
+  group_by(Indicador) %>% summarise(D_INTERVIEW=n())%>% mutate(n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
+edad
+
+educ <- df %>% mutate(Indicador= case_when(Q275R==1 ~ "Básico",
+                                     Q275R==2 ~ "Medio",
+                                     Q275R==3 ~ "Superior")) %>% na.omit() %>%
+  group_by(Indicador) %>% summarise(D_INTERVIEW=n())%>% mutate(n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
+educ
+
+rel <- df %>% mutate(Indicador= case_when(Q289==0 ~ "Ninguna",
+                                    Q289==1 ~ "Católica",
+                                    Q289==2 ~"Evangélica",
+                                    Q289>2 ~"Otra")) %>% na.omit() %>%
+  group_by(Indicador) %>% summarise(D_INTERVIEW=n())%>% mutate(n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
+rel
+
+tab2 <- data.frame(Indicador="N", n= 1000, Porcentaje = 100)
+tab2 <- rbind(tab2, sexo, edad, zona, educ, rel)
+
+```
+
+```{r, echo=F}
+
+create_table2 <- function(df) {
+  if (is_word_output()) {
+    tab2 %>% mutate(concepto= c("Total muestra",rep("Sexo", 2),
+                                    rep("Edad", 3),
+                                    rep("Zona", 2),
+                                rep("Nivel Educacional", 3),
+                                rep("Religión", 4))) %>%
+  as_grouped_data(groups = "concepto") %>% 
+  as_flextable(hide_grouplabel = TRUE) %>%
+  set_table_properties(layout = "autofit") %>%
+      add_footer_lines(values = "Nota. Tabla basada en Encuesta Mundial de Valores 2018 (Haerpfer et al., 2020)") %>%
+  font(fontname = "Cambria", part="all") %>%
+  fontsize(size=11, part="all") %>%
+  flextable::set_caption("Resumen muestra") %>%
+  bold( bold = TRUE, part="header") %>% 
+  align(i = ~ !is.na(concepto), align = "center") %>% 
+  bold(i = ~ !is.na(concepto))  %>% set_header_labels(what = "") %>%
+      colformat_num(big.mark = ".", decimal.mark = ",")
+  } else {
+    kable(tab2, booktabs= TRUE,
+    escape = FALSE,
+    caption = "Resumen muestra", align = "c",
+    position= "h", centering= F, format.args = list(decimal.mark=",")) %>%
+  row_spec(row=0, align = "c") %>%
+  kable_styling(full_width = TRUE) %>% 
+  kableExtra::footnote(general_title = "Nota.",
+    general="Tabla basada en Encuesta Mundial de Valores 2018 (Haerpfer et al., 2020)",
+    footnote_as_chunk = T) %>%   
+  kable_classic(full_width = T, html_font = "Helvetica") %>% 
+  pack_rows("Sexo", 2, 3) %>%
+  pack_rows("Edad", 4, 6) %>%
+  pack_rows("Zona", 7, 8) %>%
+  pack_rows("Nivel Educacional", 9, 11) %>%
+  pack_rows("Religión", 12, 15)
+  }
+}
+
+create_table2(tab2)
+```
+
+\FloatBarrier
+
+Esta selección se fundamenta en que la base de datos proporciona una muestra representativa a nivel nacional con indicadores relevantes sobre valores, creencias y normas sociales, políticas y económicas de la población. A partir de estos, pues, resulta posible construir tanto un modelo que identifique perfiles de individualismo como un indicador que mida el apoyo a la democracia delegativa.
 
 ## Variables
 
+### Variable dependiente
 
-## Métodos
+```{r, include=F, echo=FALSE}
+
+dd <- df %>% select(c(Q235, Q236)) %>% na.omit()
+alpha(dd)
+```
+
+La variable dependiente es el apoyo a la democracia delegativa, que se medirá a través de un índice sumativo compuesto por dos ítems: i) la valoración sobre que tan bueno es *tener un líder fuerte que no se preocupe por el congreso y las elecciones*, que es una pregunta que ha sido previamente utilizada para medir el apoyo a la democracia delegativa en contextos asiáticos [@kang2018]; y ii) la valoración sobre que tan bueno es *tener expertos, en lugar de un gobierno, tomando decisiones de acuerdo a lo que ellos creen que es mejor para el país*, considerando la impronta tecnocrática de la democracia delegativa [@odonnell1994].
+
+Cada uno de los ítems cuenta con 4 categorías de respuestas (1. Muy bueno; 2. Bueno; 3. Malo; 4. Muy Malo). Con el fin de facilitar el análisis, estas respuestas se recodificarán en sentido opuesto. Luego, se sumarán y se dividirán por 2. De esta manera, se construirá un índice con valores que oscilan entre 1 y 4, donde 1 representa un bajo apoyo a la democracia delegativa, y 4 refleja un alto apoyo.
+
+La consistencia interna de este indicador, medida a través del coeficiente $\alpha$ de Cronbach, es de 0,65. Aunque este valor se sitúa por debajo de la convención que considera valores por encima de 0,7 como aceptables, no debería ser visto como una limitación para su uso [@schmitt1996], considerando que existen razones teóricas sólidas que respaldan la idea de que ambos ítems miden distintas dimensiones de un mismo constructo. De todas formas, a modo de complemento, se incluirán análsis de ambos ítems por separado, para así abordar la posibilidades de divergencias en su relación con las variables independientes. 
+
+### Variable independiente
+
+La variable independiente es individualismo, una variable latente y categórica que será construida de manera inductiva a partir de un conjunto de indiciadores operacionalizados en base de las definiciones teóricas previamente expuestas. Es importante tener en cuenta que el análisis de clases latentes (LCA), la técnica de análisis que se utilizará, requiere que los indicadores observados sean categóricos, por lo que se procedió a la recodificación de algunos ítems. 
+
+##### Legitimidad de la individualidad.
+
+Se medirá a través de 3 subdimensiones: Legitimidad del individualismo utilitario, legitimidad del individualismo moral y legitimidad del individualismo expresivo, siguiendo las distinciones antes introducidas [@cortois2018].
+
+Para la **legitimidad del individualismo utilitario**, se seleccionaron indicadores que midan la legitimidad de acciones estratégicas destinadas a obtener beneficios personales, incluso si estas acciones van en contra de las normas sociales, tales como la evasión en el transporte público o la provisión de información falsa para recibir beneficios sociales. El énfasis aquí se centra en la legitimidad de poner los fines por sobre los medios. Además, se incluye un indicador que evalúa la valoración de la competencia, que es una de las formas principales en que el individualismo utilitario se ha institucionalizado en las sociedades modernas [@cortois2018].
+
+Para la **legitimidad del individualismo moral**, se incluirán indicadores relacionados con la importancia atribuida a la igualdad de ingresos, la igualdad de género y los derechos civiles en una democracia. Con estos, se pretende abordar la importancia que ha adquirido la igualdad de trato y los derechos humanos en la sociedad chilena [@araujo2012; @araujo2020a]. Sin duda, podría argumentarse que la inclusión de estos indicadores generaría problemas de endogeneidad con la variable dependiente, la que también aborda aspectos relacionados con la democracia. No obstante, es importante tener en cuenta que la conceptualización aquí planteada no asume una relación intrínseca entre liberalismo, democracia e individualismo. Es más, la apuesta radica precisamente en que existen modelos de individualismo en los que esta relación no existe o es contradictoria.
+
+Para la **legitimidad del individualismo expresivo**, se incluyeron indicadores relacionados con la legitimidad de prácticas individualizadas en las esferas de la sexualidad y el amor. A pesar de que el individualismo expresivo se ha extendido a otras áreas de la sociedad [@gauthier2021], se considera que las cristalizaciones más puras del individualismo expresivo se encuentran en las esferas de la sexualidad y el amor. Bajo la égida del individualismo expresivo, pues, el matrimonio y los roles sexuales dejan de estar vinculados a rígidos roles estructurales para pasar a ser el terreno de la autenticidad y la autoexpresión [@illouz2020]. Por ello, los indicadores seleccionados abordan temas tales como la homosexualidad, el divorcio y la relaciones sexuales premaritales. 
+
+Estos 9 ítems corresponden a escalas del 1 al 10. Dado que el LCA requiere que los indicadores del modelo sean categóricos, y con el objetivo de simplificar el análisis, se ha optado por dicotomizar estas variables. De tal modo, los valores iguales o inferiores a 5 se considerarán como una baja justificación de las acciones mencionadas, mientras que los valores superiores a 5 se entenderán como una alta justificación [^3].
+
+##### Concepciones del individuo. 
+ 
+Se construirá a partir de las 3 subdimensiones definidas por Brewer y Chen [-@brewer2007]: concepción independiente, concepción relacional, y concepción colectiva. 
+
+La **concepción independiente** se medirá a través de un indicador sobre que el grado de control percibido sobre la propia vida, en una escala del 1 al 10, donde 1 "representa ningún control" y 10 "una gran cantidad de control". El ítem ha sido recodificado utilizando los mismos criterios mencionados anteriormente.
+
+La **concepción relacional** se medirá a través del grado de acuerdo con la afirmación "una de mis metas en la vida ha sido que mis padres estén orgullosos de mí". Cabe destacar que la familia es solo una de las múltiples relaciones cercanas a partir de las que los individuos pueden definir su identidad. Sin embargo, debido a las limitaciones de la base de datos y considerando que la familia posiblemente representa la principal instancia de sociabilidad en la sociedad chilena [@araujo2012], se argumenta que este indicador proporciona una buena aproximación para medir la interdependencia relacional.
+
+La **concepción colectiva** se medirá a través el grado de cercanía que se siente con el país. Es importante destacar que la identidad nacional es solo una de las múltiples identidades colectivas que podrían incluirse en esta subdimensión. Entre éstas, podrían considerarse las identidades étnicas, religiosas, de clase o territoriales, entre otras. Sin embargo, es la Encuesta Mundial de Valores proporciona datos únicamente sobre identidades nacionales, regionales y locales. Ahora bien, es importante mencionar que, en el contexto chileno, la identidad regional y la identidad nacional están estrechamente relacionadas [@zuniga2010], por lo que integrar ambas en el modelo podría resultar redundante. 
+
+A diferencia de las demás variables, dado que los indicadores de interdependencia relacional e interdependencia colectiva ya son variables categóricas, se optó por no recodificar estos ítems, reduciendo así la pérdida de varianza. 
+
+##### Valores e Imperativos. 
+
+Posiblemente, esta sea la dimensión de mayor complejidad teórica y que requiere un cuidado especial en su operacionalización. Afortunadamente, la Encuesta Mundial de Valores ofrece una solución adecuada. El indicador seleccionado consiste en la pregunta: *La mayoría de las personas consideran que tanto la libertad como la seguridad son importantes, pero si tuviera que elegir una, ¿cuál consideras que es más importante?* Este indicador proporciona una forma sencilla de determinar si la autonomía es el valor principal para los individuos o si se ve desplazada por el deseo de seguridad.
+
+Los indicadores seleccionados, junto a su operacionalización y su recodificación, se resumen en la Tabla 3.2
+
+```{r, echo=FALSE, warning=FALSE}
+tab3 <- data.frame(Dimensión=c(rep("Legitimidad individualismo utilitario", 6),
+                                    rep("Legitimidad individualismo moral", 6),
+                                    rep("Legitimidad individualismo expresivo", 6),
+                                    rep("Concepción Independiente",2),
+                                    rep("Concepción Relacional",4),
+                                    rep("Concepción Colectiva",4),
+                                    rep("Valor principal",2)),
+                   Indicadores=c(rep("Valoración de la competencia",2),
+                                 rep("Justificación de evasión transporte público",2),
+                                 rep("Justificación de aceptar ayudas sociales sin necesidad",2),
+                                 rep("Importancia de la igualdad de ingresos",2),
+                                 rep("Importancia de la igualdad de género",2),
+                                 rep("Importancia del respeto a los derechos civiles",2),
+                                 rep("Justificación de la homosexualidad",2),
+                                 rep("Justificación del divorcio",2),
+                                 rep("Justificación del sexo premarital",2),
+                                 rep("Control sobre la propia vida",2),
+                                 rep("Hacer orgullosos a los padres",4),
+                                 rep("Cercanía con Chile",4),
+                                 rep("Considera más importante",2)),
+                   Categorías= c("1. Alta valoración",
+                                 "2. Baja valoración",
+                                 "1. Alta justificación",
+                                 "2. Baja justificación",
+                                 "1. Alta justificación",
+                                 "2. Baja justificación",
+                                 "1. Alta importancia",
+                                 "2. Baja importancia",
+                                  "1. Alta importancia",
+                                 "2. Baja importancia",
+                                  "1. Alta importancia",
+                                 "2. Baja importancia",
+                                 "1. Alta justificación",
+                                 "2. Baja justificación",
+                                 "1. Alta justificación",
+                                 "2. Baja justificación",
+                                 "1. Alta justificación",
+                                 "2. Baja justificación",
+                                 "1. Un gran control",
+                                 "2. Nada de control",
+                                 "1. Muy de acuerdo",
+                                 "2. De acuerdo",
+                                 "3. En desacuerdo",
+                                 "4. Muy en desacuerdo",
+                                 "1. Muy cercano",
+                                 "2. Cercano",
+                                 "3. Poco cercano",
+                                 "4. Nada cercano",
+                                 "1. La libertad",
+                                 "2. La seguridad"))
+
+create_table3 <- function(df) {
+  if (is_word_output()) {
+    tab3 %>% mutate(concepto= c(rep("Legitimidad de la Individualidad", 18),
+                                    rep("Concepciones del Individuo", 10),
+                                    rep("Valores e Imperativos", 2))) %>%
+  as_grouped_data(groups = "concepto") %>% 
+  as_flextable(hide_grouplabel = TRUE) %>%
+  set_table_properties(layout = "autofit") %>%
+  font(fontname = "Cambria", part="all") %>%
+  fontsize(size=11, part="all") %>%
+  flextable::set_caption("Resumen indicadores") %>%
+  merge_v(j = ~ Dimensión + Indicadores ) %>% 
+  bold( bold = TRUE, part="header") %>% 
+  align(i = ~ !is.na(concepto), align = "left") %>% 
+  bold(i = ~ !is.na(concepto))  %>% set_header_labels(what = "") %>%
+      hline(i= c(7, 13, 19, 22, 26, 30))
+  } else {
+    kable(tab3, booktabs= TRUE,
+    escape = FALSE,
+    caption = "Resumen indicadores", align = "ccl", position="h") %>%
+  row_spec(row=0, align = "c") %>%
+  kable_classic(full_width =F , html_font = "Helvetica") %>%
+  column_spec(1, width = "3cm") %>%
+  column_spec(2, width = "7cm") %>%
+  column_spec(3, width = "5cm") %>%
+  pack_rows("Legitimidad de la individualidad", 1, 18, latex_align = "l", indent= F) %>% 
+  pack_rows("Concepciones del Individuo", 19, 28, latex_align = "l", indent=F) %>% 
+  pack_rows("Valores e imperativos", 29, 30, latex_align = "l", indent=F) %>%
+  collapse_rows(columns = 1, valign = "middle", latex_hline = "major") %>%
+  collapse_rows(columns = 2, valign = "middle", latex_hline = "none")
+  }
+}
+
+create_table3(tab3)
+    
+```
+
+\FloatBarrier
+
+### Variables de control
+
+Se incluirán variables de control, principalmente aquellas relacionadas con características sociodemográficas que se ha observado se relacionan con el apoyo a la democracia. De tal modo, se incluirán en el modelo la autoidentificación política en el espectro izquierda-derecha, el sexo, la edad, el nivel educacional y la identificación religiosa, entre otras [@navia2019; @gidron2020; @eskelinen2020]. Estos indicadores se resumen en la tabla 3.3.
+
+```{r, echo=F}
+
+tab33 <- data.frame(Variable= c(rep("Género", 2),
+                                rep("Edad", 1),
+                                rep("Posición Política", 6),
+                                rep("Ingresos Subjetivos"),
+                                rep("Religión", 4),
+                                rep("Tipo de Ciudad", 4),
+                                rep("Clase Social", 3)),
+                    Operacionalización = c("1. Hombre",
+                                           "2. Mujer",
+                                           "Continua",
+                                           "1. Ninguna",
+                                           "2. Izquierda",
+                                           "3. Centro Izquierda",
+                                           "4. Centro",
+                                           "5. Centro Derecha",
+                                           "6. Derecha",
+                                           "Escala del 1 al 10",
+                                           "1. Ninguna",
+                                           "2. Católica",
+                                           "3. Evángelica",
+                                           "4. Otra",
+                                           "1. Santiago",
+                                           "2. Más de 100.000 hab",
+                                           "3. Menos de 100.000 hab",
+                                           "4. Rural",
+                                           "1. Clase de Servicios",
+                                           "2. Clase Media",
+                                           "3. Clase Trabajadora"))
+
+create_table33 <- function(df) {
+  if (is_word_output()) {
+    tab33 %>% flextable() %>%
+  set_table_properties(layout = "autofit") %>%
+      merge_v(j=1, part="body") %>%
+  font(fontname = "Cambria", part="all") %>%
+  fontsize(size=11, part="all") %>%
+  flextable::set_caption("Resumen Variables de Control") %>%
+      footnote(i=c(4,5,6,7,8,19,20,21),
+               j=2,
+              value = as_paragraph(c("Del 7 al 10, en una escala del 1 al 10",
+                                        "Del 4 al 6, en una escala del 1 al 10",
+                                        "Del 1 al 3, en una escala del 1 al 10",
+                                        "Profesionales y funcionarios administrativos superiores",
+                                        "Cargos administrativos medios; pequeños y medianos empresarios",
+                                        "Trabajadores manuales o agrícolas, cualificados y no-cualificados")),
+              ref_symbols = c("a", "b", "c", "d", "e", "f", "g", "h"),
+              inline = F) %>%
+      hline(i= c(2, 3, 7, 8, 12, 16, 19))
+  } else {
+    tab33 %>%
+      mutate(Operacionalización = case_when(
+        Operacionalización=="6. Derecha" ~ paste0("6. Derecha",
+                                                  footnote_marker_alphabet("e")),
+        Operacionalización=="5. Centro Derecha" ~ paste0("5. Centro Derecha",
+                                                  footnote_marker_alphabet("d")),
+        Operacionalización=="4. Centro" ~ paste0("4. Centro",
+                                                  footnote_marker_alphabet("c")),
+         Operacionalización=="3. Centro Izquierda" ~ paste0("3. Centro Izquierda",                                                footnote_marker_alphabet("b")),
+        Operacionalización=="2. Izquierda" ~ paste0("2. Izquierda",                                                footnote_marker_alphabet("a")),
+        Operacionalización=="1. Clase de Servicios" ~ paste0("1. Clase de Servicios",
+                                                  footnote_marker_alphabet("f")),
+        Operacionalización=="2. Clase Media" ~ paste0("2. Clase Media",
+                                                  footnote_marker_alphabet("g")),
+        Operacionalización=="3. Clase Trabajadora" ~ paste0("3. Clase Trabajadora",
+                                                  footnote_marker_alphabet("h")),
+        
+        .default = Operacionalización)) %>%
+    kable(booktabs= TRUE,
+    escape = FALSE,
+    caption = "Resumen Variables de Control", align = "cl", position="h") %>%
+  row_spec(row=0, align = "c") %>%
+  kable_classic(full_width =T , html_font = "Helvetica") %>%
+      kableExtra::footnote(alphabet = c("Del 9 al 10, en una escala del 1 al 10",
+                                        "Del 6 al 7, en una escala del 1 al 10",
+                                        "5, en una escala del 1 al 10",
+                                        "Del 3 al 4, en una escala del 1 al 10",
+                                        "Del 1 al 2, en una escala del 1 al 10",
+                                        "Profesionales y funcionarios administrativos superiores",
+                                        "Cargos administrativos medios; pequeños y medianos empresarios",
+                                        "Trabajadores manuales o agrícolas, cualificados y no-cualificados"),
+               fixed_small_size = F) %>%
+  collapse_rows(columns = 1, valign = "middle", latex_hline = "major")
+  }
+}
+
+create_table33(tab33)
+
+```
+\FloatBarrier
+
+## Estrategia de análisis
+
+### Análisis descriptivo
+
+Para determinar los niveles de apoyo a la democracia delegativa en Chile, se llevará a cabo un análisis descriptivo univariado que calculará el promedio y examinará la distribución del indicador construido. Además, se realizará un análisis bivariado para identificar posibles asociaciones entre el constructo y variables sociodemográficas, como el sexo, la edad y el nivel educativo
+
+### Análisis de clases latentes
+
+Operacionalmente, se entiende individualismo como una variable latente y categórica que puede medirse a través de un conjunto de indicadores observados. Por lo tanto, se empleará un análisis de clases latentes para identificar los perfiles de individualismo en la sociedad chilena. El LCA es un modelo de variables latentes categóricas, lo que permite identificar diferencias cualitativas y principios de organización dentro de la población [@collins2010].
+
+El uso de métodos cuantitativos en una investigación con una perspectiva teórica como la que se ha planteado aquí, centrada en la individualización y la sociología del individuo, puede presentar desafíos, pues es un campo donde predominan las aproximaciones cualitativas. A pesar de esto, y reconociendo la riqueza que tales enfoques han aportado a la comprensión del individuo en Chile, el análisis de clases latentes se presenta como una herramienta valiosa para enriquecer el conocimiento existente sobre el individualismo en el país. 
+
+El análisis de clases latentes se considera como una *aproximación orientada a la persona* [@collins2010]. Esta forma de abordar el análisis estadístico se diferencia en que no busca establecer relaciones entre variables, sino que tiene como objetivo producir resultados interpretables a nivel del individuo y que brinden información sobre los patrones generales de comportamiento de las personas [@bergman2015]. En consecuencia, el LCA ofrece la oportunidad de llevar a cabo una sociología a nivel del individuo, mediante la cual, a través de sus percepciones, creencias y experiencias, sea posible mapear los procesos estructurales de individuación en Chile. Esto permitiría obtener una versión menos unívoca del individualismo chileno, desarrollando una tipología que identifique divergencias y difracciones de este fenómeno en la sociedad chilena.
+
+Una técnica similar al LCA que ha sido utilizada previamente en estudios similares [@rojas2008] es el análisis de conglomerados. La diferencia clave entre ambas radica en que el análisis de conglomerados es una técnica determinística, mientras que el análisis de clases latentes es una técnica probabilística, en la que el modelo estima la probabilidad de que un individuo pertenezca a una categoría específica. La ventaja de esta aproximación radica en su capacidad para proporcionar información sobre el error asociado al modelo estimado [@magidson2002]. Además, Magidson y Vermunt [-@magidson2002] enumeran otras ventajas del LCA sobre el análisis de conglomerados, como la capacidad para determinar de manera más exacta el número de clases y predecir con mayor precisión la membresía de los casos.
+
+El análisis se realizará utilizando el paquete **poLCA** (**po**lytomous Variable **L**atent **C**lass **A**nalysis) en R. Este paquete permite especificar modelos de clases latentes de manera eficiente con solo unas pocas líneas de código y proporciona información valiosa sobre el tamaño de cada clase latente, las probabilidades posteriores de membresía y criterios para evaluar el ajuste del modelo, como AIC, BIC y otros [@linzer2011].
+
+La selección del modelo se realizará a partir de la evaluación del ajuste estadístico de modelos con distintos números de clase mediante el Criterio de Información Akaike (AIC) y el Criterio de Información Bayesiano (BIC), además de criterios de interpretatibilidad teórica. AIC y BIC son dos indicadores de ajuste estadístico relativo que permiten la comparación de modelos. Un valor más bajo en estos indicadores indica un mejor ajuste, lo que representa un equilibrio óptimo entre el ajuste y la parsimonia del modelo [@collins2010]. 
+
+### Modelo de regresión lineal
+
+Por último, se realizará un modelo de regresión lineal para establecer la relación entre los perfiles de individualismo y el nivel apoyo a la democracia delegativa. Para esto, se construirá una nueva variable categórica de individualismo, asignando a cada caso una categoría (esto es, un perfil de individualismo) en función de la máxima probabilidad posterior de membresía estimada por el modelo de clases latentes. 
+
+Suponiendo, pues, que la $clase_1$ se tomaría como categoría de referencia, el modelo base de esta investigación quedaría definido por la siguiente fórmula:
+
+$$Apoyo Democracia Delegativa = \alpha + \beta_1Clase_2 + \beta_2Clase_3 + ... + \beta_kClase_j$$
+
+Esta no es una solución ideal, dado el error asociado a la condición probabilística de la técnica [@collins2010], pero al menos es una salida pragmática que permitiría arrojar luces sobre la asociación y responder la pregunta de investigación. 
+
+[^3]: La única excepción es el indicador de competencia, donde los valores se encontraban invertidos. Para facilitar el análisis, se recodificó de modo que 2 indicadora una mayor valoración de la competencia, y 1 una menor. 
+

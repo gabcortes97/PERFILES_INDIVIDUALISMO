@@ -25,6 +25,8 @@
 %%
 % \documentclass{<something>} must begin each LaTeX document
 \documentclass[12pt,twoside]{templates/facsothesis}
+ \renewcommand{\familydefault}{\sfdefault}
+
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
 % Chemistry (chemtex), screenplays, you name it.
@@ -53,13 +55,15 @@
             urlcolor  = blue,
             citecolor = blue,
             anchorcolor = blue]{hyperref}
-\usepackage{lmodern}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 \usepackage{float}
 \floatplacement{figure}{H}
 % End of CII addition
 \usepackage{rotating}
 \usepackage{placeins} % para fijar la posición de las tablas con \FloatBarrier
-
+\usepackage{helvet}
 
 \usepackage[]{natbib}
 
@@ -165,7 +169,7 @@ $dedication$
 }
 
 \Preface{
-$preface$
+$prefacio$
 }
 
 \Abstract{
@@ -175,6 +179,8 @@ $abstract$
 $for(header-includes)$
 	$header-includes$
 $endfor$
+
+\renewcommand{\baselinestretch}{1.5}
 % End of CII addition
 %%
 %% End Preamble
@@ -182,14 +188,15 @@ $endfor$
 %
 \let\chaptername\relax
 \begin{document}
-\bibliographystyle{apalike}
+\raggedbottom
+\bibliographystyle{apa-good}
 % Everything below added by CII
 $if(title)$
   \maketitle
 $endif$
 
 \frontmatter % this stuff will be roman-numbered
-\pagestyle{empty} % this removes page numbers from the frontmatter
+ \pagestyle{empty} 
 
 $if(acknowledgements)$
   \begin{acknowledgements}
@@ -197,27 +204,31 @@ $if(acknowledgements)$
   \end{acknowledgements}
 $endif$
 
-$if(preface)$
-  \begin{preface}
-    $preface$
-  \end{preface}
+$if(prefacio)$
+  \begin{prefacio}
+  \thispagestyle{empty}
+    $prefacio$
+  \end{prefacio}
 $endif$
 
 $if(toc)$
-%  \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+%  \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}}
   \setcounter{tocdepth}{$toc-depth$}
   \setlength{\parskip}{0pt}
   \tableofcontents
+  \thispagestyle{empty}
 $endif$
 
 \setlength\parskip{1em plus 0.1em minus 0.2em}
 
 $if(lot)$
   \listoftables
+  \thispagestyle{empty}
 $endif$
 
 $if(lof)$
   \listoffigures
+  \thispagestyle{empty}
 $endif$
 
 $if(abstract)$
@@ -233,6 +244,7 @@ $if(dedication)$
 $endif$
 
 \mainmatter % here the regular arabic numbering starts
+\titleformat{\chapter}{\normalfont\Huge\bfseries}{\thechapter}{1em}{}
 \pagestyle{fancyplain} % turns page numbering back on
 
 $body$
@@ -240,10 +252,14 @@ $body$
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%% Bibliography                              %%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \addtocontents{toc}{\vspace{.5\baselineskip}}
-% \cleardoublepage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{\protect\numberline{}{Bibliography}}
+%\addtocontents{toc}{\vspace{.9\baselineskip}}
+
+\cleardoublepage
+\pagestyle{fancyplain}
+\fancyhf{}
+	 \fancyhead[RE]{\slshape Bibliografía}
+\phantomsection
+\addcontentsline{toc}{chapter}{{Bibliografía}}
 \bibliography{tesis}
 
 %% All books from our library (SfS) are already in a BiBTeX file
