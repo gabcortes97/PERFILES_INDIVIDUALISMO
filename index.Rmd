@@ -12,7 +12,7 @@ link-citations: yes
 fontsize: 12pt
 lof: true
 lot: True
-linespread: 1.07
+linespread: 1
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
