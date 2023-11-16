@@ -13,7 +13,7 @@ fontsize: 12pt
 lof: true
 lot: True
 linespread: 1.07
-site: bookdown::bookdown_site
+url: 'https\://gabcortes97.github.io/tesis3/'
 output: bookdown::gitbook
 documentclass: book
 prefacio: |
