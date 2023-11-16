@@ -174,23 +174,26 @@
 \renewcommand{\cleardoublepage}{\RTcleardoublepage}
 
 % adjust margins for binding  (changed 2007-04-24 tgp)
-\setlength{\oddsidemargin}{.5in}
-\setlength{\evensidemargin}{0in}
-\setlength{\textwidth}{6.0in}
-\setlength{\textheight}{9.0in}
-\setlength\topmargin{0in}
-\addtolength\topmargin{-\headheight}
-\addtolength\topmargin{-\headsep}
+%\setlength{\oddsidemargin}{3.5cm}
+%\setlength{\evensidemargin}{2.5cm}
+%\setlength{\textwidth}{15.59cm}
+%\setlength{\textheight}{22.94cm}
+%\setlength\topmargin{2.5cm}
+%\addtolength\topmargin{-\headheight}
+%\addtolength\topmargin{-\headsep}
 
 %\setlength{\oddsidemargin}{.6in}
 %\setlength{\evensidemargin}{0in}
 %\setlength{\textwidth}{5.9in}
-\addtolength\headheight{2.5pt}
+%\addtolength\headheight{1.27cm}
 %\addtolength\topmargin{-\headheight}
 %\addtolength\topmargin{-\headsep}
 %\addtolength\textheight{1in}
 %\addtolength\textheight{\headheight}
 %\addtolength\textheight{\headsep}
+
+%configuración propia
+\usepackage[left=3.5cm, right=2.5cm, width= 15.59cm, top=2.5cm, bottom=2.5cm, height=22.94cm, headsep=0.85cm, headheight= 1.27cm, footskip=0.85cm]{geometry}
 
 \def\degree#1{\gdef \@degree{#1}}
 \def\@degree{\@latex@warning@no@line{No \noexpand\degree given}}

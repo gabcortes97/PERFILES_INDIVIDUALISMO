@@ -26,7 +26,6 @@
 % \documentclass{<something>} must begin each LaTeX document
 \documentclass[12pt,twoside]{templates/facsothesis}
  \renewcommand{\familydefault}{\sfdefault}
-
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
 % Chemistry (chemtex), screenplays, you name it.
@@ -57,7 +56,7 @@
             anchorcolor = blue]{hyperref}
 \usepackage{titlesec}
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
-\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+\titlespacing*{\chapter}{0pt}{-50pt}{12pt}
 \usepackage{float}
 \floatplacement{figure}{H}
 % End of CII addition
@@ -99,7 +98,7 @@
 \title{PERFILES DE INDIVIDUALISMO Y SU RELACIÓN CON EL APOYO A LA DEMOCRACIA DELEGATIVA EN LA SOCIEDAD CHILENA}
 \author{GABRIEL CORTÉS PAREDES}
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
-\date{Santiago de Chile 2023}
+\date{Santiago de Chile, 2023}
 \division{}
 \advisor{Profesora guía: Macarena Orchard}
 \institution{FACULTAD DE CIENCIAS SOCIALES E HISTORIA}
@@ -268,7 +267,7 @@ De lo anterior, se desprende un segunda característica esencial de esta variant
 
 Por lo tanto, se entenderá que el respaldo a la democracia delegativa implica el apoyo a líderes fuertes que tengan la capacidad para satisfacer eficazmente las demandas ciudadanas, incluso si esto conlleva pasar por encima de otras instancias de control institucional, combinando elementos carismáticos con enfoques altamente tecnocráticos.
 
-O'Donnell \citeyearpar{odonnell1994} argumenta que a la democracia delegativa subayace un individualismo extremo, donde los ciudadanos deben actuar de manera independiente de sus identidades y afiliaciones para elegir al \emph{individuo} más adecuado para asumir la responsabilidad de la nación. Esta idea puede parecer contradictoria con la noción que ha sido aceptada, desde Tocqueville en adelante, de un estrecho vínculo entre el individualismo y las variantes más liberales y representativas de democracia. Al fin y al cabo, la democracia liberal se basa en la libre asociación de individuos soberanos capaces de otorgar legitimidad al orden social \citep{martuccelli2010}. Si a esta contradicción se le añade la evidencia empírica que apunta a la asociación entre el individualismo con el conservadurismo \citep{zhang2009} y el autoritarismo \citep{kemmelmeier2003}, la dominancia social \citep{strunk1999}, el panorama general sugiere que la relación entre individualismo y democracia está lejos de ser unívoca.
+O'Donnell \citeyearpar{odonnell1994} argumenta que a la democracia delegativa subayace un individualismo extremo, donde los ciudadanos deben actuar de manera independiente de sus identidades y afiliaciones para elegir al \emph{individuo} más adecuado para asumir la responsabilidad de la nación. Esta idea puede parecer contradictoria con la noción que ha sido aceptada, desde Tocqueville en adelante, de un estrecho vínculo entre el individualismo y las variantes más liberales y representativas de democracia. Al fin y al cabo, la democracia liberal se basa en la libre asociación de individuos soberanos capaces de otorgar legitimidad al orden social \citep{martuccelli2010}. Si a esta contradicción se le añade la evidencia empírica que apunta a la asociación entre el individualismo con el conservadurismo \citep{zhang2009}, el autoritarismo \citep{kemmelmeier2003} y la dominancia social \citep{strunk1999}, el panorama general sugiere que la relación entre individualismo y democracia está lejos de ser unívoca.
 
 Frente a lo anterior, y con el objetivo de explorar posibles divergencias en la asociación entre los dos fenómenos principales abordados en esta investigación, la siguiente sección se enfocará en una revisión crítica de la conceptualización que, desde la psicología cultural, se ha realizado sobre individualismo y colectivismo. Tras eso, se presentará la propuesta teórica que se asumirá en la investigación, la que se encuentra fundamentada en la teoría de la individualización y en la sociología del individuo.
 
@@ -862,35 +861,36 @@ Constante & 2.134*** & 2.191*** & 1.802***\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Individualismo (1 = Conservador)}}\\
 \hspace{1em}Autoritario & 0.442*** &  & 0.447***\\
+\hspace{1em}Liberal & 0.212* &  & 0.175\\
 \hspace{1em}Agéntico & 0.508*** &  & 0.504***\\
-\hspace{1em}Mujer &  & 0.085 & 0.083\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Género (1 = Hombre)}}\\
-\hspace{1em}Edad &  & -0.004 & -0.003\\
-Izquierda &  & 0.053 & 0.023\\
+\hspace{1em}Mujer &  & 0.085 & 0.083\\
+Edad &  & -0.004 & -0.003\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Pos. Política (1 = Ninguna)}}\\
+\hspace{1em}Izquierda &  & 0.053 & 0.023\\
 \hspace{1em}Centro Izquierda &  & -0.127 & -0.115\\
 \hspace{1em}Centro &  & -0.054 & -0.019\\
 \hspace{1em}Centro Derecha &  & -0.320** & -0.256*\\
 \hspace{1em}Derecha &  & 0.213 & 0.205\\
-\hspace{1em}Ingresos Subjetivos &  & 0.057* & 0.057*\\
-Católica &  & 0.208** & 0.214**\\
+Ingresos Subjetivos &  & 0.057* & 0.057*\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Religión (1 = Ninguna)}}\\
+\hspace{1em}Católica &  & 0.208** & 0.214**\\
 \hspace{1em}Evangélica &  & 0.104 & 0.143\\
 \hspace{1em}Otra &  & 0.291 & 0.269\\
-\hspace{1em}Rural &  & -0.313** & -0.297**\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Tipo de Ciudad (1 = Santiago)}}\\
+\hspace{1em}Rural &  & -0.313** & -0.297**\\
 \hspace{1em}Menos de 100.000hab &  & -0.357*** & -0.307**\\
 \hspace{1em}Más de 100.000hab &  & 0.013 & 0.045\\
-\hspace{1em}Clase Media &  & 0.183 & 0.181*\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Clase Social (1 = de Servicios)}}\\
+\hspace{1em}Clase Media &  & 0.183 & 0.181*\\
 \hspace{1em}Clase Trabajadora &  & 0.294** & 0.267**\\
 \midrule
-\hspace{1em}$N$ & 623 & 533 & 533\\
+$N$ & 623 & 533 & 533\\
 $R^2$ & 0.059 & 0.091 & 0.151\\
 $R^2$ Ajustado & 0.054 & 0.062 & 0.119\\
 \bottomrule
@@ -920,35 +920,37 @@ Constante & 0.169** & 0.158**\\
 \addlinespace[0.3em]
 \multicolumn{3}{l}{\textbf{Individualismo (1 = Conservador)}}\\
 \hspace{1em}Autoritario & 3.161*** & 2.447**\\
+\hspace{1em}Liberal & 1.564 & 1.390\\
 \hspace{1em}Agéntico & 2.853*** & 4.795***\\
-\hspace{1em}Mujer & 1.437 & 1.075\\
 \addlinespace[0.3em]
 \multicolumn{3}{l}{\textbf{Género (1 = Hombre)}}\\
-\hspace{1em}Edad & 0.991 & 0.997\\
-Izquierda & 1.265 & 1.576\\
+\hspace{1em}Mujer & 1.437 & 1.075\\
+Edad & 0.991 & 0.997\\
 \addlinespace[0.3em]
 \multicolumn{3}{l}{\textbf{Pos. Política (1 = Ninguna)}}\\
+\hspace{1em}Izquierda & 1.265 & 1.576\\
 \hspace{1em}Centro Izquierda & 1.094 & 0.764\\
 \hspace{1em}Centro & 1.245 & 0.553*\\
+\hspace{1em}Centro Derecha & 0.754 & 0.461*\\
 \hspace{1em}Derecha & 2.890 & 2.169\\
-\hspace{1em}Ingresos Subjetivos & 1.086 & 1.213**\\
-\hspace{1em}Católica & 1.693* & 1.735*\\
-Evangélica & 1.635 & 2.194\\
+Ingresos Subjetivos & 1.086 & 1.213**\\
 \addlinespace[0.3em]
 \multicolumn{3}{l}{\textbf{Religión (1 = Ninguna)}}\\
+\hspace{1em}Católica & 1.693* & 1.735*\\
+\hspace{1em}Evangélica & 1.635 & 2.194\\
 \hspace{1em}Otra & 1.359 & 3.301**\\
-\hspace{1em}Rural & 0.624 & 0.532*\\
-\hspace{1em}Menos de 100.000hab & 0.557* & 0.455**\\
 \addlinespace[0.3em]
 \multicolumn{3}{l}{\textbf{Tipo de Ciudad (1 = Santiago)}}\\
+\hspace{1em}Rural & 0.624 & 0.532*\\
+\hspace{1em}Menos de 100.000hab & 0.557* & 0.455**\\
 \hspace{1em}Más de 100.000hab & 1.675* & 0.858\\
+\addlinespace[0.3em]
+\multicolumn{3}{l}{\textbf{Clase Social (1 = de Servicios)}}\\
 \hspace{1em}Clase Media & 1.308 & 2.095**\\
 \hspace{1em}Clase Trabajadora & 1.423 & 1.773*\\
 \midrule
-\addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Clase Social (1 = de Servicios)}}\\
-\hspace{1em}$N$ & 550 & 545\\
-\hspace{1em}$R^2$ Tjur & 0.108 & 0.147\\
+$N$ & 550 & 545\\
+$R^2$ Tjur & 0.108 & 0.147\\
 \bottomrule
 \multicolumn{3}{l}{\rule{0pt}{1em}Nota. *:p<0,05; **:p<0.01; ***p<0.001}\\
 \end{tabu}
@@ -961,16 +963,62 @@ Finalmente, aunque se mantiene la relación positiva con el individualismo liber
 \hypertarget{discusiuxf3n}{%
 \chapter{Discusión}\label{discusiuxf3n}}
 
-En base a la literatura revisada, se hubiera esperado que una relación negativa entre ingresos y apoyo a la democracia delegativa: En general, personas con menores ingresos \citep{kang2018, navia2019} o con menor bienestar subjetivo \citep{nowakowski2021, gidron2020} tienden a ser más favorables a opciones autoritarias y no democráticas. Sin embargo, el apoyo a la democracia delegativa parece ser mayor entre los sectores medios del país, y menor entre quienes perciben tener ingresos bajos.
+\textbf{Apoyo a la Democracia Delegativa}
 
-Una posible explicación se podría deber a las diferencias entre la percepción de ingresos y las condiciones materiales objetivos de la población, datos que lamentablemente no están presentes en la Encuesta Mundial de Valores. Otras posibles causas podrían encontrarse en el fenómeno de la ``inconsistencia posicional'' \citep{araujo2012} que, entre las clases medias, podría leerse como una amenaza a sus estatus económico alcanzando, lo que estaría relacionado al apoyo a posiciones autoritarias \citep{arikan2019}. Una tercera explicación podría ensayarse a partir de las tesis de la privatización de las clases medias \citep{mendez2012}, que implicaría su repliegue desde lo público, impactando en sus actitudes políticas. Cualquiera sea el mérito de estas explicaciones, igualmente queda abierta la pregunta de porqué el comportamiento de los sectores medios resultó ser tan diferente al de los sectores bajos.
+Se constató que el respaldo a la democracia delegativa en la sociedad chilena se sitúa en niveles intermedios, siendo el apoyo a que los expertos tomen decisiones para el país ligeramente más elevado que el respaldo a un líder fuerte. Es relevante señalar que se han identificado algunas disparidades entre grupos, siendo especialmente destacable el menor apoyo hacia la democracia delegativa que se identifican con la centro-derecha, en contraposición a lo esperado a partir de la experiencia nacional \citep{navia2019} e internacional \citep{donovan2021}. Otro aspecto relevante de este dato es que se observan diferencias entre la centro-derecha y las posiciones más extremas de derecha, las cuales exhiben un respaldo superior a la democracia delegativa. Una posible explicación para esto podría radicar en diferencias de ingresos o de nivel educativo, lo que se traduciría en un menor respaldo a la democracia delegativa entre las personas con posiciones más moderadas en de derecha \citep{kang2018}. Esto plantea hipótesis interesantes acerca de cómo el estatus socioeconómico puede interactuar o moderar el efecto de la posición política en el respaldo a la democracia.
 
-También llama la atención que las personas de derecha se ubiquen en como la posición política, en contra de lo que se hubiera esperado a partir de la experiencia nacional \citep{navia2019} e internacional \citep{donovan2021}. Una posible explicación a esto sería que las personas de derecha cuentan ingresos y un nivel educativo relativamente más alto, lo que redundaría en un menor apoyo a la democracia delegativa \citep{kang2018}. Esto plantea hipótesis interesantes sobre cómo el estatus socioeconómico puede interactuar o moderar el efecto de la posición política sobre el apoyo a la democracia.
+Resulta llamativo, además, que las zonas rurales y las ciudades con menos de 100 mil habitantes sean las que menos respaldan la democracia delegativa, dado que la evidencia ha apuntado a que las áreas rurales suelen mostrar un mayor apoyo a candidatos de derecha populista en países como Estados Unidos \citep{schafft2021} o Alemania \citep{deppisch2022}. Este hallazgo merece una mayor atención en investigaciones futuras que se propongan trazar una geografía del autoritarismo en Chile y explorar cómo este fenómeno puede mostrar diferencias entre zonas urbanas y rurales.
 
-Por último, respecto a la edad, llama la atención que las personas mayores de 60 años sean las que muestren un menor apoyo a la democracia delegativa. Nuevamente, aquí pueden estar actuando interacciones con otras variables socioeconómicas, como nivel de ingresos. Por otro lado, el alto nivel de apoyo en las personas de mediana edad podría explicarse por la indiferencia frente a los regímenes políticos, la que se ha extendido en todos los países de América Latina tras las transiciones democráticas \citep{monsivais-carrillo2019}.
+\textbf{Perfiles de Individualismo}
 
-Antes de pasar a describir más en detalle cada clase, vale la pena mencionar un aspecto que es constante entre las 4 clases: No se observaron grandes diferencias en las concepciones independientes ni interdependientes. Es decir, tal como se observó en el promedio de la población, parece ser un aspecto que cruza toda la sociedad chilena el que las concepciones independientes del individuo no son contradictorias ni con sus identidades relacionales ni colectivas. Si bien se hubiese esperado que el análisis de clases latentes hubiera sido capaz de hacer distinciones también en esta dimensión, esto no deja de ser un hallazgo interesante. Así, pues, el caracter fuertemente relacional del híper-actor descrito por Araujo y Martuccelli \citeyearpar{araujo2012} aparece como transversal entre grupos sociales. Esto es consistente con las investigaciones que se han hecho sobre el \emph{self-construal} en Chile \citep{benavides2020, kolstad2009}, y podría ir en la misma línea de los hallazgos que apuntan a que en los chilenos conviven actitides individualistas y redistributivas respecto a la desigualdad \citep{franetovic2023}. Además, presenta todavía más evidencia a favor de que, como se ha argumentado, situar a Chile en un continuo de individualismo y colectivismo puede resultar problemático.
-\# Conclusiones
+El análisis de clases latentes realizado respalda la hipótesis de que los procesos de individualización divergen dentro de una misma sociedad. A partir de los datos examinados, se logró identificar cuatro perfiles distintos de individualismo en la sociedad chilena: individualismo autoritario, individualismo conservador, individualismo liberal e individualismo agéntico. Cada uno de estos perfiles equivale a variadas representaciones de la posición del individuo en la sociedad, y son resultado de combinaciones específicas de legitimidad de la acción individual en diferentes esferas, concepciones variadas del individuo, y diferentes valores e imperativos estructuralmente producidos. Además, la presencia de diferencias en edad, orientación política, ubicación geográfica o afiliación religiosa entre estos perfiles arroja luz sobre cómo los procesos estructurales interactúan de manera diferenciada con distintos segmentos de la población.
+
+La tipología elaborada permite establecer un diálogo con la descripción del individualismo agéntico y el híper-actor relacional propuesto por Araujo y Martuccelli \citeyearpar{araujo2020}. Este modelo presenta dos características fundamentales: en primer lugar, la confianza depositada en las habilidades personales para afrontar la vida social, y en segundo lugar, la centralidad de las redes interpersonales. Se observó que una de las clases identificadas se acerca de manera más clara a este modelo, de ahí que se haya decidido mantener la denominación de ``individualismo agéntico''. No obstante, se debe destacar que los otros perfiles también exhiben rasgos que hacen suponer que comparten, al menos parcialmente, la descripción de Araujo y Martuccelli.
+
+En relación con la confianza en el esfuerzo y las habilidades personales, esto podría observarse en la alta valoración de la competencia y los elevados niveles de independencia observados de manera transversal en todos los perfiles. En términos generales, los datos sugieren que la mayoría de los chilenos cree poseer las habilidades necesarias para asumir el control de sus propias vidas.
+
+Uno de los perfiles identificados, el individualismo agéntico, parece llevar este rasgo hasta el extremo, ya que es el único en el cual se legitima el actuar estratégico. Estar en un \emph{estado de alerta} para aprovechar las oportunidades que surgen es otra característica del individualismo agéntico descrita por Araujo y Martucceli \citeyearpar{araujo2014}. En la sociedad chilena, la capacidad de aprovechar las oportunidades suele ser vista como un motivo de orgullo personal, aunque no sin contradicciones, especialmente cuando se convierte en transgresión. Se podría pensar que esta tipología refleja esa tensión: Mientras tres de las clases identificadas parecen percibir el oportunismo como un vicio colectivo, el individualismo agéntico lo celebra como un virtud personal.
+
+Por otro lado, el carácter relacional del individualismo chileno parece ser una característica que atraviesa todos los perfiles \citep{araujo2014}. Cierto es que se mide solo una identidad relacional (la familia) y solo una identidad colectiva (el país). Pese a esto, no parece demasiado difícil argumentar la importancia de estas identidades y que incluirlas en el modelo sirve para un buen primer acercamiento.
+
+También es importante señalar que el carácter relacional del individualismo chileno no entra en contradicción con las concepciones independientes, que muestran niveles tan elevados como los indicadores de interdependencia. Esto es consistente tanto con las dos características que describen al individualismo agéntico \citep{araujo2020} como con las investigaciones sobre el \emph{self-construal} en Chile \citep{benavides2020, kolstad2009}. Además, ofrece más respaldo a la idea de que ubicar a Chile en un continuo entre el individualismo y el colectivismo resulta problemática. A pesar de que los chilenos mayoritariamente se identifican como individuos independientes, esto no se traduce en la aceptación de ideales tipo \emph{self-made man}. Por el contrario, parece innegable que el individualismo chileno, en todas sus variantes, no se comprende de manera aislada de las identidades familiares y nacionales de las personas.
+
+En resumen, a partir de los datos analizados, se puede concluir que el individualismo agéntico representa el modelo predominante de individualismo en Chile. Sin embargo, el aporte de esta investigación radica en que, mediante el análisis de clases latentes, es posible observar cómo este modelo diverge dentro de la sociedad chilena. Para algunos, la acción individual debe estar subordinada al orden normativo, mientras que para otros es legítimo actuar de manera estratégica incluso si ello transgrede normas sociales. Mientras que para unos la individualidad tiene cabida en todas las esferas, para otros su legitimidad no alcanza para la esfera afectiva. De tal modo, este enfoque permite observar los matices y las divergencias de los procesos de individualización en Chile.
+
+\textbf{Apoyo a la democracia delegativa y perfiles de individualismo}
+
+El hecho de que haya sido posible establecer una relación estadísticamente significativa entre los perfiles de individualismo y el respaldo a la democracia delegativa debe ser considerado como una evidencia alentadora del potencial del modelo teórico de individualismo propuesto. Dos de los perfiles identificados muestran una asociación negativa con el apoyo a la democracia delegativa (el conservador y el liberal), mientras que los otros dos (el agéntico y el autoritario) exhiben una relación positiva.
+
+Cabe preguntarse si este no es un eje que permita distinguir entre los perfiles identificados: el individualismo conservador y el liberal podrían denominarse como \emph{individualismos cívicos}, orientados hacia lo público. En contraste, el autoritario y el agéntico podrían considerarse más bien \emph{hiperindividualismos}, que están orientados más bien hacia lo privado. En los primeros, la individualidad estaría vinculada a la pertenencia a una comunidad política; en los segundos, lo público representaría un desafío, un obstáculo que se debe evitar ya sea mediante la sumisión de la individualidad a un orden normativo (como en el caso del individualismo autoritario) o mediante la maximización de las habilidades personales (como es el caso del individualismo agéntico). O'Donnell \citeyearpar{odonnell1994} ya había advertido sobre el individualismo hobbesiano que subyace a la noción de democracia delegativa; parece que los individualismos que respaldan esta variante de democracia comparten con Hobbes su visión pesimista sobre la naturaleza humana. Si la hipótesis que se desprende de estas afirmaciones es correcta, se esperaría encontrar diferencias entre los perfiles de individualismo en variables como la participación política o la confianza generalizada.
+
+Aunque la distinción entre individualismos cívicos e hiperindividualismos puede recordar los constructos de individualismo horizontal e individualismo vertical, respectivamente, es necesario realizar algunas precisiones. En primer lugar, cabe señalar que el individualismo horizontal pone énfasis, sobre todo, en la unicidad del individuo. Aunque esto podría describir a los individualistas liberales, se debe notar que los individualistas conservadores no parecen estar tan dispuestos a aceptar esa unicidad en la esfera expresiva. Por otro lado, aunque se puede inferir que los hiperindividualismos muestran componentes jerárquicos, también es posible observar rasgos de individualismo horizontal, especialmente en el individualismo agéntico, como en la alta legitimidad de la individualidad expresiva. Lo que distingue a los individualismos cívicos de los hiperindividualismos no son tanto las visiones jerárquicas o sobre la unicidad del individuo, sino más bien su posición frente a la esfera pública. Sin embargo, en futuras investigaciones se debería profundizar en la relación entre el modelo teórico propuesto aquí y otras mediciones de individualismo, incluyendo las escalas de individualismo vertical y horizontal.
+
+Otro aspecto interesante que se debe destacar es que, mientras los individualistas autoritarios muestran un mayor respaldo a los líderes fuertes, los individualistas agénticos lo hacen en la dimensión sobre los expertos. Este hallazgo resulta relevante considerando que el individualismo agéntico, a diferencia del autoritario (pero en concordancia con el conservador y el liberal), exhibe altos niveles de apoyo a la individualidad en la esfera política. Esto podría indicar que lo que caracteriza al individualismo agéntico no sería tanto el autoritarismo, sino más bien una postura pragmática hacia la democracia. Este grupo podría valorar la democracia no necesariamente como un fin, sino como un medio que les permita resolver problemas privados. Es posible que este perfil muestre los niveles más altos de apoyo a que sean los expertos quienes tomen decisiones para el país dado a que asociarían el rol de estos actores a una mayor eficacia para abordar sus demandas.
+
+\hypertarget{conclusiuxf3n}{%
+\chapter{Conclusión}\label{conclusiuxf3n}}
+
+A continuación, a modo de conclusión, se presentarán algunas reflexiones sobre las limitaciones y posibles líneas de investigación futuras que se desprenden de este estudio.
+
+Para empezar, es importante reflexionar sobre las oportunidades que brinda el análisis de clases latentes en la investigación sobre los procesos de individualización en Chile. Dada la dificultad para traducir su marco teórico a una propuesta metodológica mediante las técnicas cuantitativas más comunes, la sociología del individuo se ha desarrollado principalmente desde una perspectiva cualitativa, resultando en descripciones profundas y estimulantes sobre el individuo en la sociedad chilena. En este contexto, el análisis de clases latentes no busca desplazar, sino complementar los hallazgos obtenidos por esta perspectiva. De esta manera, el enfoque metodológico adoptado en esta investigación permitió identificar algunos de los rasgos del individualismo agéntico descritos por Araujo y Martuccelli \citeyearpar{araujo2014}, al tiempo que ofrece una visión más matizada de cómo los procesos de individualización divergen en la sociedad chilena, diferenciándose entre grupos sociales y teniendo consecuencias en las actitudes políticas de los individuos.
+
+Pese a lo anterior, es necesario reconocer las limitaciones que enfrentó esta investigación. La principal, posiblemente, se derive de los indicadores seleccionados. Aunque los resultados obtenidos parecen prometedores, es crucial continuar avanzando en la construcción y validación de indicadores que permitan traducir el modelo teórico aquí propuesto en un modelo de medición capaz de abordar el fenómeno del individualismo en Chile. En este sentido, hay cuatro puntos que vale la pena mencionar.
+
+En primer lugar, es llamativo que no se observa una relación entre la valoración de la competencia y los indicadores de accionar estratégico, como evadir en el transporte público y mentir para obtener beneficios sociales. Se podría argumentar que estos representan dos dimensiones de un mismo constructo, el individualismo utilitario, con uno de ellos englobando la valoración de la competencia, el esfuerzo y la meritocracia, y el otro refiriéndose a los límites de esas conductas. Por ejemplo, una persona podría valorar la competencia entre individuos pero entender que ello implica el respeto común a ciertas normas; mientras que otros, como sería el caso de los individualistas agénticos, podrían percibir que la competencia justifica un \emph{todo vale}. Sin embargo, tampoco se puede descartar la posibilidad de que estos sean simplemente dos constructos diferentes. Sea cual sea el caso, es necesaria la elaboración validación de indicadores que permitan medir el individualismo utilitario.
+
+En segundo lugar, si los individualistas agénticos muestran una posición más pragmática frente a la democracia, ¿esto no debería reflejarse en una baja legitimidad del individualismo moral? El hecho de que los individualistas agénticos tengan una alta probabilidad de legitimar esa dimensión bien podría indicar que las razones para hacerlo no son necesaria o exclusivamente el individualismo. Otros factores, como la deseabilidad social, podrían estar sesgando estos resultados. Sin embargo, no es contradictorio que el individualismo agéntico legitime la individualidad en la esfera moral, especialmente si se vincula con los deseos de horizontalización del lazo social \citep{araujo2020a}. Preguntas que no aborden directamente la democracia, mediante temas tales como la pena de muerte o los derechos humanos, podrían mejorar la medición de este constructo.
+
+En tercer lugar, como se ha mencionado anteriormente, hay razones para creer que la familia y la nación son particularmente relevantes a la hora de medir la interdependencia relacional y la identidad colectiva. No obstante, esto no significa que se deban descartar posibles diferencias en los perfiles identificados con respecto a otras identidades. Se podría hipotetizar, por ejemplo, que la identidad religiosa es más importante que la nacional entre los individualistas autoritarios, o que las amistades o las identidades profesionales pueden complementar la relevancia de la familia entre los individualistas liberales. Investigaciones futuras deberán abordar desde qué grupos de referencia los individuos construyen sus identidades.
+
+Por último, la recodificación de variables continuas como dicotómicas es una solución pragmática, pero que no deja de ser problemática, ya que resulta en la pérdida de parte de la varianza de los ítems \citep{fernandes2019}. De tal modo, en el caso de construir indicadores originales a partir del modelo teórico de esta investigación, se debería considerar hacerlo directamente como variables categóricas que no necesiten recodificación para ser incluidas en el modelo de clases latentes. De esta manera, se obtendría claridad en los resultados sin sacrificar información ni poder estadístico.
+
+Otras limitaciones provienen más bien de la muestra. Si 5 años ya se encuentra en el límite de lo que se puede considerar como datos relevantes para la actualidad, a esto se debe sumar que este último lustro ha sido uno particularmente tumultuoso: el Estallido Social, la Pandemia, el proceso constituyente, la crisis migratoria y la crisis de seguridad han sido algunos de los eventos de gran magnitud que han marcado la agenda durante los últimos años. ¿Están hoy los chilenos más dispuestos que hace 5 años a sacrificar su libertad y su individualidad en distintas esferas para obtener garantías de orden y seguridad? ¿Significó la emergencia sanitaria una transformación en como los expertos son percibidos y cuál debe ser su rol en la toma de decisiones? Entre las ollas comunes y los retiros de fondos previsionales, entre las protestas masivas y las cuarentenas, ¿cambiaron las concepciones -- independientes, relacionales y colectivas -- con las que los individuos construyen sus identidades? ¿Qué efectos puede tener la instauración del voto obligatorio en el eje individualismo cívico-hiperindividualismo, o en las percepciones de los ciudadanos sobre una democracia delegativa? Todas estas son preguntas relevantes que quedarán abiertas y deberán ser abordadas en el futuro.
+
+Por otro lado, no se puede descartar la presencia de sesgos de deseabilidad social o por casos perdidos. La Encuesta Mundial de Valores es un extenso cuestionario que, con más de 300 preguntas, aborda temas que pueden resultar sensibles para muchas personas. No se puede descartar, por lo tanto, que ciertos grupos de la población estén moderando -- o incluso ocultando -- sus percepciones sobre temas políticos o valóricos. Se identificó que las personas mayores de 60 años, sin educación universitaria, sin identificación política y los habitantes fuera de Santiago muestran mayores probabilidades de no responder en las variables clave de este estudio. Frente a esto, una posibilidad a considerar es la imputación de datos para cubrir esta brecha.
+
+Ahora bien, dado que Chile ha participado en 6 olas de la Encuesta Mundial de Valores desde 1990, se debería considerar correr los modelos aquí propuestos utilizando datos de ediciones anteriores (así como estar atento a la próxima versión a realizarse entre 2023 y 2026). Esto permitiría evaluar si los resultados obtenidos en este estudio guardan consistencia con el pasado, así como observar la evolución de estos indicadores a lo largo del tiempo.
+
+Pese a estas limitaciones, el trabajo contenido en este documento logra obtener resultados relevantes. Se encontró evidencia de que distintas formas de individualismo pueden generar actitudes políticas diferentes respecto a la democracia, el tipo de liderazgos esperados y el rol que los expertos deben desempeñar en la sociedad. Es importante considerar que estas inclinaciones no surgen en un vacío, sino que son el resultado de la interacción de factores institucionales y estructurales con la agencia de los individuos. De esta manera, se espera que la lectura de esta investigación provoque la reflexión en torno a los tipos de individuos que nuestras instituciones, a través de sus programas e incentivos, contribuyen a producir, así como en las consecuencias de estos procesos para la democracia chilena.
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%% Bibliography                              %%%

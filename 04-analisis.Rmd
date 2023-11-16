@@ -160,7 +160,7 @@ lca4_probs <- tidy(lca4)
 
 clase4 <- c("1" = "Individualismo Autoritario (29%)",
             "2" = "Individualismo Conservador (19%)",
-            "3"= "Individualismo liberal (27%)",
+            "3"= "Individualismo Liberal (27%)",
             "4"= "Individualismo Agéntico (25%)")
 
 lca_fig <- lca4_probs %>% mutate(outcome= case_when(outcome==1 ~ "Nivel Alto",
@@ -289,7 +289,7 @@ modelos <- list("(1)" = m1,
 
 cm2 <- c("(Intercept)"= "Constante",
          "claseIndivididualismo Autoritario"= "Autoritario",
-         "claseIndividualismo liberal"= "liberal",
+         "claseIndividualismo Cívico"= "Liberal",
          "claseIndividualismo Agéntico"= "Agéntico",
          "generoMujer"= "Mujer",
          "Q262"= "Edad",
@@ -384,14 +384,14 @@ modelos2 <- list("Apoyo Líder Fuerte" = m4,
 
 cm2b <- c("(Intercept)"= "Constante",
          "claseIndivididualismo Autoritario"= "Autoritario",
-         "claseIndividualismo liberal"= "liberal",
+         "claseIndividualismo Cívico"= "Liberal",
          "claseIndividualismo Agéntico"= "Agéntico",
          "generoMujer"= "Mujer",
          "Q262"= "Edad",
          "id_polIzquierda"= "Izquierda",
          "id_polCentro Izquierda"= "Centro Izquierda",
          "id_polCentro"= "Centro",
-         "id_pol Centro Derecha"= "Centro Derecha",
+         "id_polCentro Derecha"= "Centro Derecha",
          "id_polDerecha"= "Derecha",
          "Q288" = "Ingresos Subjetivos",
          "religionCatólica"= "Católica",
@@ -445,7 +445,7 @@ create_table7<- function(df) {
   kable_styling(full_width = T,
                 font_size = 8.5) %>%
   column_spec(1, width = "5cm", latex_valign = "m") %>% 
-  pack_rows("Individualismo (1 = Conservador)", 2, 4) %>%
+ pack_rows("Individualismo (1 = Conservador)", 2, 4) %>%
   pack_rows("Género (1 = Hombre)", 5, 5) %>%
   pack_rows("Pos. Política (1 = Ninguna)", 7, 11) %>%
   pack_rows("Religión (1 = Ninguna)", 13, 15) %>%

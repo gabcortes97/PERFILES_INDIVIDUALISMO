@@ -1,5 +1,35 @@
 # Antecedentes
 
+```{r, echo=F, include=F, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(psych)
+library(flextable)
+library(ftExtra)
+library(gridExtra)
+library(broom)
+library(purrr)
+library(modelsummary)
+
+wvs <- read.csv("ipo/input/Datos/wvs.csv", header = T, sep = ";")
+
+df <- wvs %>% select(c(D_INTERVIEW, H_SETTLEMENT, H_URBRURAL, Q1, Q2, Q8, Q11, Q14,
+                       Q27, Q109, Q150, Q178, Q177, Q182, Q185, Q186,
+                       Q235, Q236, Q240, Q246, Q247, Q249, Q255,
+                       Q256, Q257, Q260, Q262, Q275R, Q287, Q289)) %>%
+   mutate(across(everything(),~ifelse(.<0, NA, .)))
+
+# Function to check if the output format is Word
+is_word_output <- function() {
+  if (knitr::is_latex_output()) {
+    return(FALSE)
+  } else {
+    return(TRUE)
+  }
+}
+```
+
 ```{r echo=FALSE}
 knitr::opts_chunk$set(out.width="80%", fig.pos = "!ht", out.extra = "")
 ```
