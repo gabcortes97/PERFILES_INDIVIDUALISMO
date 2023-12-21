@@ -40,7 +40,7 @@ abstract: |
 
 *"If success and failure are the result of individual effort, those at the top can hardly be blamed -- unless, of course, they are politician"* (Bellah et al, 1996,   p.xv)
 
-*Agradecimientos*
+**Agradecimientos**
 
  No puedo comenzar este documento, que representa el cierre de una etapa significativa en mi vida personal y profesional, sin antes expresar mi profundo agradecimiento a mi familia por el apoyo incondicional brindado en estos últimos años. Espero poder retribuir, aunque sea en parte, todo lo que han hecho por mí.
  
