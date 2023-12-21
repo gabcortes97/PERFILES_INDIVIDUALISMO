@@ -159,9 +159,7 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\Acknowledgements{
-$acknowledgements$
-}
+
 
 \Dedication{
 $dedication$
@@ -169,6 +167,10 @@ $dedication$
 
 \Preface{
 $prefacio$
+}
+
+\Acknowledgements{
+$agradecimientos$
 }
 
 \Abstract{
@@ -197,17 +199,27 @@ $endif$
 \frontmatter % this stuff will be roman-numbered
  \pagestyle{empty} 
 
-$if(acknowledgements)$
-  \begin{acknowledgements}
-    $acknowledgements$
-  \end{acknowledgements}
-$endif$
-
 $if(prefacio)$
   \begin{prefacio}
   \thispagestyle{empty}
     $prefacio$
   \end{prefacio}
+$endif$
+
+$if(agradecimientos)$
+  \begin{agradecimientos}
+  \thispagestyle{empty}
+  \setlength\parskip{1em plus 0.1em minus 0.2em}
+    $agradecimientos$
+  \end{agradecimientos}
+$endif$
+
+$if(abstract)$
+  \begin{abstract}
+  \thispagestyle{empty}
+  \setlength\parskip{1em plus 0.1em minus 0.2em}
+    $abstract$
+  \end{abstract}
 $endif$
 
 $if(toc)$
@@ -228,12 +240,6 @@ $endif$
 $if(lof)$
   \listoffigures
   \thispagestyle{empty}
-$endif$
-
-$if(abstract)$
-  \begin{abstract}
-    $abstract$
-  \end{abstract}
 $endif$
 
 $if(dedication)$
@@ -258,7 +264,7 @@ $body$
 \fancyhf{}
 	 \fancyhead[RE]{\slshape Bibliografía}
 \phantomsection
-\addcontentsline{toc}{chapter}{{Bibliografía}}
+\addcontentsline{toc}{chapter}{Bibliografía}
 \bibliography{tesis}
 
 %% All books from our library (SfS) are already in a BiBTeX file

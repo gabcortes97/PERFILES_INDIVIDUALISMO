@@ -233,15 +233,6 @@
 %   \fi}
 
 %%% Added by CII
-\newenvironment{acknowledgements}{%
-  \if@twocolumn
-    \@restonecoltrue\onecolumn
-  \else
-    \@restonecolfalse
-  \fi
-  \chapter*{Acknowledgements}
-  \fontsize{12}{14}\selectfont
-}{\clearpage \if@restonecol\twocolumn\fi}%
 
 \usepackage{geometry}
 
@@ -252,6 +243,16 @@
   \begin{flushright}
 }{\end{flushright}\restoregeometry\clearpage}
 
+\newenvironment{agradecimientos}{%
+  \if@twocolumn
+    \@restonecoltrue\onecolumn
+  \else
+    \@restonecolfalse
+  \fi
+  \chapter*{Agradecimientos}
+  \fontsize{12}{14}\selectfont
+}{\clearpage \if@restonecol\twocolumn\fi}%
+
 % End of CII add
 
 \newenvironment{abstract}{%
@@ -260,7 +261,7 @@
   \else
     \@restonecolfalse
   \fi
-  \chapter*{Abstract}
+  \chapter*{Resumen}
   \fontsize{12}{14}\selectfont
 }{\clearpage \if@restonecol\twocolumn\fi}%
 

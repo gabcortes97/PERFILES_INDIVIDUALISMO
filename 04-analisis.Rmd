@@ -15,7 +15,7 @@ create_table4 <- function(df) {
   flextable::set_caption("Apoyo a Líderes Fuertes y Expertos (%)") %>%
   add_footer_lines(values = "Nota. Tabla basada en Encuesta Mundial de Valores 2018 (Haerpfer et al., 2020)") %>%
   colformat_num(big.mark = ".", decimal.mark = ",") %>%
-  font(fontname = "Cambria", part="all") %>%
+  font(fontname = "Helvetica", part="all") %>%
   fontsize(size=11, part="all")
   } else {
     kable(tab4, booktabs= TRUE,
@@ -37,7 +37,7 @@ create_table4(tab4)
 
 \FloatBarrier
 
-Al construir el índice de apoyo a la democracia delegativa, el promedio se sitúa en 2,39 en una escala del 1 al 4, donde 1 representa un menor apoyo y 4 un mayor apoyo. Este valor promedio se encuentra en una posición intermedia, lo cual concuerda con el comportamiento observado en los indicadores individuales. Como se ilustra en la Figura 4.1, el 68% de los casos se sitúa en el rango entre 2 y 3.
+Al construir el índice de apoyo a la democracia delegativa, el promedio se sitúa en 2,39 ($s$ = 0,8) en una escala del 1 al 4, donde 1 representa un menor apoyo y 4 un mayor apoyo. Este valor promedio se encuentra en una posición intermedia, lo cual concuerda con el comportamiento observado en los indicadores individuales. Como se ilustra en la Figura 4.1, el 68% de los casos se sitúa en el rango entre 2 y 3.
 
 ```{r, echo=F, fig.cap= "Distribución Apoyo a Democracia Delegativa", fig.align='center'}
 library(ggsci)
@@ -47,7 +47,6 @@ tabx <- readRDS("ipo/output/tabx.rds")
 tabx %>% ggplot(aes(x=dd, y= Frecuencia, fill=dd)) +
   geom_bar(width = 0.5, stat="identity", fill= "#92c5de", colour="#0571b0") +
   labs(x="Apoyo a la democracia delegativa", y= "Proporción (%)") +
-  geom_text(aes(label=Frecuencia), vjust=1.6, color="black",  size=4) +
   theme(legend.position = "none") +
   theme_classic()
 
@@ -55,15 +54,11 @@ tabx %>% ggplot(aes(x=dd, y= Frecuencia, fill=dd)) +
 \FloatBarrier
 Nota. Elaboración propia en base a datos de la Encuesta Mundial de Valores (Haerpfer et al., 2020).
 
-Los grupos sociodemográficos que muestran un mayor respaldo a la democracia delegativa son las personas que se identifican políticamente de dereccha ($\bar{x}$=2,66), con ingresos subjetivos medios-altos[^4] ($\bar{x}$=2,5), aquellas que se identifican como evangélicas ($\bar{x}$=2,48) o católicas ($\bar{x}$=2,44), las que no se identifican con ninguna posición política ($\bar{x}$=2,43), y las personas con edades comprendidas entre los 30 y los 44 años ($\bar{x}$=2,46). Por otro lado, en el extremo opuesto, se encuentran a las personas con ingresos subjetivos bajos ($\bar{x}$=2,22), sin afiliación religiosa ($\bar{x}$=2,24), aquellos políticamente identificados con la centro derecha ($\bar{x}$=2,3), los mayores de 60 años ($\bar{x}$=2,31), y las personas con ingresos subjetivos altos ($\bar{x}$=2,32).
-
-Es importante notar, sin embargo, que la magnitud de las diferencias entre los grupos sociodemográficos no se encuentra tan marcada, y existe la posibilidad de que no sean estadísticamente significativas.
+Los grupos sociodemográficos que muestran un mayor respaldo a la democracia delegativa son las personas que se identifican políticamente de derecha ($\bar{x}$=2,66, $s$=0,99), con ingresos subjetivos medios-altos[^4] ($\bar{x}$=2,5, $s$=0,84), aquellas que se identifican como evangélicas ($\bar{x}$=2,48, $s$=0,84) o católicas ($\bar{x}$=2,44, $s$=0,78), las que no se identifican con ninguna posición política ($\bar{x}$=2,43, $s$=0,78), y las personas con edades comprendidas entre los 30 y los 44 años ($\bar{x}$=2,46, $s$=0,75). Por otro lado, en el extremo opuesto, se encuentran a las personas con ingresos subjetivos bajos ($\bar{x}$=2,22, $s$=0,81), sin afiliación religiosa ($\bar{x}$=2,24, $s$=0,83), aquellos políticamente identificados con la centro derecha ($\bar{x}$=2,3, $s$=0,99), los mayores de 60 años ($\bar{x}$=2,31, $s$=0,82), y las personas con ingresos subjetivos altos ($\bar{x}$=2,32).
 
 ## Análisis de Clases Latentes
 
-### Análisis Descriptivo
-
-En la Figura 4.2 se presenta la distribución de los indicadores de individualismo para el total de la muestra. Se destaca una alta valoración de la competencia (70%), pero un amplio rechazo al actuar estratégico cuando se trata de mentir para obtener beneficios sociales (63%) o en la evasión en el transporte público (80%). Además, se nota una valoración moderadamente alta de los indicadores de individualismo moral e individualismo expresivo.
+### Análisis Descriptivo {-}
 
 ```{r, echo=F, fig.cap= "Distribución indicadores de individualismo (recodificados)", fig.align='center'}
 
@@ -122,13 +117,15 @@ lca1_probs %>% mutate(outcome= case_when(outcome==1 ~ "Nivel Alto",
 \FloatBarrier
 Nota. Elaboración propia en base a datos de la Encuesta Mundial de Valores (Haerpfer et al., 2020); Todas las variables son dicotómicas, excepto los indicadores de independencia, interdependencia relacional e interdependencia colectiva, que no se recodificaron y se mantuvieron como variables categóricas de 4 categorías. 
 
-El 83% se siente a cargo de su vida, lo que refleja un alto nivel de independencia. De manera similar, un 84% considera que hacer sentir orgullosos a sus padres es uno de los principales objetivos en sus vidas. Además, un 90% de la población se siente cercana o muy cercana a su país. Estos hallazgos son coherentes con investigaciones previas que sugieren que las autonconcepciones independientes e interdependientes no son contradictorias, sino que muestran niveles igualmente altos en Chile [@benavides2020; @kolstad2009].
+En la Figura 4.2 se presenta la distribución de los indicadores de individualismo para el total de la muestra. Se destaca una alta valoración de la competencia (70%), pero un amplio rechazo al actuar estratégico cuando se trata de mentir para obtener beneficios sociales (63%) o en la evasión en el transporte público (80%). Además, se nota una valoración moderadamente alta de los indicadores de individualismo moral e individualismo expresivo.
 
-Por último, una proporción importante de la población (62%) prioriza la seguridad (en rojo) por encima de la libertad (en azul). Este hallazgo -- que resultar interesante leerlo, además, a la luz de la crisis de seguridad que atraviesa el país actualmente -- podría representar evidencia a favor de que la autonomía no es el valor principal en base al cual las personas se constituyen como individuos en Chile  [@martuccelli2010]. 
+El 83% se siente a cargo de su vida, lo que refleja un alto nivel de independencia. De manera similar, un 84% considera que hacer sentir orgullosos a sus padres es uno de los principales objetivos en sus vidas. Además, un 90% de la población se siente cercana o muy cercana a su país. Estos hallazgos son coherentes con investigaciones previas que sugieren que las autoconcepciones independientes e interdependientes no son contradictorias, sino que muestran niveles igualmente altos en Chile [@benavides2020; @kolstad2009].
 
-### Modelo de Clases Latentes
+Por último, una proporción importante de la población (62%) prioriza la seguridad (en rojo) por encima de la libertad (en azul). Este hallazgo -- que resulta interesante leerlo, además, a la luz de la crisis de seguridad que atraviesa el país actualmente -- podría representar evidencia a favor de que la autonomía no es el valor principal en base al cual las personas se constituyen como individuos en Chile  [@martuccelli2010]. 
 
-El siguiente paso, pues, es identificar si estas variables se comportan de manera diferenciada en diversos grupos de la población. Para llevar a cabo este análisis, se seleccionó un modelo de 4 clases en base a los estadísticos de ajuste que se muestran en la Figura 4.3, además de considerar criterios teóricos y de parsimonia [@collins2010].
+### Modelo de Clases Latentes {-}
+
+El siguiente paso, pues, es identificar si es posible identificar perfiles entre los que los indicadores seleccionados se comportan de manera diferenciada. Para llevar a cabo este análisis, se seleccionó un modelo de 4 clases en base a los estadísticos de ajuste que se muestran en la Figura 4.3, además de considerar criterios teóricos y de parsimonia [@collins2010].
 
 ```{r, echo=F, fig.cap= "Ajuste Estadístico de Modelos Estimados", fig.align='center'}
 lca_fits <- readRDS("ipo/output/fits")
@@ -150,9 +147,9 @@ grid.arrange(plot_aic, plot_bic, ncol = 2)
 \FloatBarrier
 Nota. Elaboración propia en base a datos de la Encuesta Mundial de Valores (Haerpfer et al., 2020).
 
-Debido a las diferencias en las penalizaciones incorporadas en sus cálculos, cada indicador puede llevar a conclusiones diferentes: mientras que el BIC sugiere un modelo de 4 clases, el AIC apunta hacia uno de 6. Es importante señalar que se ha observado que el BIC puede predecir de manera más precisa el número de clases que el AIC, especialmente en muestras con más de 300 casos [@nylund2007]. Además, se deben tener en cuenta criterios sustantivos, como la parsimonia y la interpretabilidad teórica. Por ello, se ha optado por el modelo de 4 clases, el cual se presenta a continuación en la Figura 4.4.
+Debido a las diferencias en las penalizaciones incorporadas en sus cálculos, cada indicador puede llevar a conclusiones diferentes: mientras que el BIC sugiere un modelo de 4 clases, el AIC apunta hacia uno de 6. Es importante señalar que se ha observado que el BIC puede predecir de manera más precisa el número de clases que el AIC, especialmente en muestras con más de 300 casos [@nylund2007]. Además, se deben tener en cuenta criterios sustantivos, como la parsimonia y la interpretabilidad teórica. Por ello, y luego de analizar las distintas configuraciones, se ha optado por el modelo de 4 clases, el cual se presenta a continuación en la Figura 4.4.
 
-```{r, echo=F, fig.cap= "Modelos de Clases Latentes de Individualismo", fig.align='center', message=FALSE}
+```{r, echo=F, fig.cap= "Modelo de Clases Latentes de Individualismo (4 clases)", fig.align='center', message=FALSE}
 
 lca4 <- readRDS("ipo/output/lca4")
 
@@ -216,31 +213,60 @@ lca_fig
 
 ```
 \FloatBarrier
-Nota. $N$=713; Parametros Estimados = 71; $G^24$= 3016,5 (df=642); $AIC$=11.812; $BIC$=12.136 
+Nota. $N$=713; Parametros Estimados = 71; $G^2$= 3016,5 (df=642); $AIC$=11.812; $BIC$=12.136 
 
-Se observa que las cuatro clases muestran patrones distintos entre sí, así como diferencias respecto a la distribución promedio de la muestra. La Clase 1 se denominó como *individualismo autoritario* y representa aproximadamente el 29% de la población. La Clase 2 se ha identificado como un *individualismo conservador* y comprende alrededor del 19% de la población. La Clase 3, a la que se ha nombrado como *individualismo liberal*, representa alrededor del 27% de la población. Finalmente, la Clase 4 se bautizó como *individualismo agéntico* y abarca aproximadamente el 25% de la población.
+Se observa que las cuatro clases muestran patrones distintos entre sí, así como diferencias respecto a la distribución promedio de la muestra. En la figura 4.5., se describe la distribución estimada de cada uno de los perfiles en la población.
 
-El *individualismo autoritario* se caracteriza por valorar positivamente la competencia, pero a la vez tiende a rechazar la acción individual en diversas esferas. Por ejemplo, se observa un alto rechazo a evadir en el transporte público (88%), una indiferencia hacia los derechos civiles (83%), y un rechazo a la homosexualidad (84%). Dicho en otras palabras, la acción individual cuenta con baja legitimidad tanto en la esfera económica, como en la política y en la expresiva, prefiriendo la conformidad a las normas sociales. Sin embargo, la valoración positiva de la competencia podría ser indicativo de una legitimación de un orden jerárquicos entre individuos. 
+```{r echo=F, fig.cap= "Distribución estimada Clases Latentes", fig.align='center', message=FALSE}
 
-Es interesante destacar que esta clase presentaa, además,  el nivel más bajo de independencia (un igualmente alto 68%) y de interdependencia colectiva (un 78% se siente cercano o muy cercano al país). Asimismo, la probabilidad de que los miembros de esta clase prefieran la seguridad por sobre la libertad es la más alta entre las 4 clases, con un 73%. Estos datos podrían sugerir una menor integración social en comparación con el resto de las clases, lo que se ha asociado previamente a actitudes autoritarias [@gidron2020]. La edad promedio de este grupo es de 46,3 años, ligeramente superior al promedio de la muestra (44,3 años).  Esta diferencia se debe principalmente a que solo el 14% de las personas en este perfil tienen menos de 30 años. Además, es importante señalar que este grupo muestra un mayor nivel de religiosidad, al menos en términos nominales: el 67% de sus miembros se identifica como católico, mientras que solo el 19% no tiene afiliación religiosa. Un rasgo adicional interesante de este perfil es que presenta, al mismo tiempo, la mayor proporción de personas pertenecientes a la clase trabajadora[^6] (48%) y de personas de la clase de servicios[^7] (26%)
+df <- readRDS("ipo/input/Datos/data.rds")
+lca4 <- readRDS("ipo/output/lca4")
 
-El *individualismo conservador* se caracteriza por una alta probabilidad de justificar la competencia y de legitimar el individualismo moral, mientras que rechaza tanto la acción estratégica como el individualismo en la esfera expresiva. El carácter conservador de este grupo queda así, marcado, por las altas probabilidades, mayores a la del resto de los grupos, de rechazar la homosexualidad (100%), el divorcio (79%) y el sexo premarital (82%). Por otro lado, parece ser el grupo donde la interdependencia relacional cobra más importancia en las autoconcepciones de los individuos. Por último, la probabilidad de que los miembros de esta clase prefieran la seguridad por encima de la libertad es del 70%.
+datos <- data.frame(clase= c("Clase 1",
+                             "Clase 2",
+                             "Clase 3",
+                             "Clase 4"),
+                    x= lca4$P*100,
+                    se= lca4$P.se*100)
+datos <- datos %>% mutate(LI= x-1.96*se,
+                          LS= x+1.96*se,
+                          IC= LS-x)
 
-Al igual que el individualismo autoritario, este grupo se caracteriza por tener una edad promedio superior al de la muestra (47,8 años promedio). Esto se refleja en que la proporción de personas menores de 30 en este perfil alcanza solo el 12%, mientras que el 28% tiene 60 años o más. En general, los individualistas conservadores se encuentran políticamente más a la centro derecha (36%), son más católicos (63%) que otros grupos y viven en ciudades más pequeñas (el 27% vive en ciudades menores a 100.000 habitantes). También es el grupo que más reporta ingresos subjetivos altos (14%, el doble del promedio de la muestra). Sin embargo, esto no se ve reflejado en el tipo de trabajos que realizan, pues la proporción de personas pertenecientes a la clase media[^8] y clase de servicios en este perfil se encuentran en torno al promedio de la muestra.  
+# Clases de individualismo con intervalos de confianza
 
-El lema "Dios, Patria y Familia" podría describir bien a este grupo. ¿Qué lo diferencia del individualismo autoritario? Principalmente su mayor compromiso con los valores del individualismo moral. Por ejemplo, la probabilidad de presentar una alta valoración de los derechos civiles alcanza, entre individualistas conservadores, un 73%. 
+g1 <- ggplot(datos, aes(x=clase, y=x)) + 
+  geom_col(fill= "#92c5de", colour="#0571b0") +
+ geom_errorbar(aes(ymin=LI, ymax=LS), width=0.2) +
+  xlab("Clases de Individualismo") + ylab("Proporción") +
+  geom_text(aes(label=sprintf("%.1f%%", round(x, 1))), vjust=-0.5, hjust=-0.1) +
+  theme_bw()
 
-El **individualismo liberal** tienes algunos rasgos similares con el individualismo conservador. Por ejemplo, muestra una alta probabilidad de legitimar la competencia, y también el individualismo moral, además de rechazar de forma considerables las acciones estratégicas. Sin embargo, se distancia de sus pares conservadores dos aspectos fundamentales: Por un lado, en la alta legitimidad del individualismo expresivo que se observa en este grupo. Por otro, en que es la única clase donde la probabilidad de elegir la libertad es mayor que la preferir la seguridad. Es un individualismo liberal, pues, sus valores parecen apuntar al respeto a la libertad y a la tolerancia de la acción individual en todas las esferas de la vida social, aunque manteniendo el respeto por algunas normas de convivencia. A pesar de que podría asemejarse al "individualismo institucional" descrito por Martuccelli [-@martuccelli2010], se diferencia de este por su marcado carácter relacional -- lo que parece ser un rasgo transversal a las cuatro clases de individualismo identificadas. 
+g1
+
+```
+\FloatBarrier
+
+La clase 1 se caracteriza por valorar positivamente la competencia, pero a la vez tiende a rechazar la acción individual en diversas esferas. Por ejemplo, se observa un alto rechazo a evadir en el transporte público (88%), una indiferencia hacia los derechos civiles (83%), y un rechazo a la homosexualidad (84%). Dicho en otras palabras, la acción individual cuenta con baja legitimidad tanto en la esfera económica, como en la política y en la expresiva. Para este grupo, de tal modo, la individualidad debe estar subsumida al respeto irrestricto a las normas sociales establecidas. Es posible que este deseo venga de una menor integración y de un mayor deseo por seguridad. Respecto a lo primero, es interesante destacar que esta clase presenta, además,  el nivel más bajo de independencia (un igualmente alto 68%) y de interdependencia colectiva (un 78% se siente cercano o muy cercano al país). Asimismo, la probabilidad de que los miembros de esta clase prefieran la seguridad por sobre la libertad es la más alta entre las 4 clases, con un 73%. Dado que la conformidad [@zakrisson2005] y la baja integración social [@gidron2020] son caracteristicas asociadas a las personalidades autoritarias, se ha decido bautizar a este perfil como **individualismo autoritario**
+
+La edad promedio de este grupo es de 46,3 años, ligeramente superior al promedio de la muestra (44,3 años).  Esta diferencia se debe principalmente a que solo el 14% de las personas en este perfil tienen menos de 30 años. Además, es importante señalar que este grupo muestra un mayor nivel de religiosidad, al menos en términos nominales: el 67% de sus miembros se identifica como católico, mientras que solo el 19% no tiene afiliación religiosa. Un rasgo adicional interesante de este perfil es que presenta, al mismo tiempo, la mayor proporción de personas pertenecientes a la clase trabajadora (48%) y de personas de la clase de servicios (26%).
+
+La clase 2 se caracteriza por una alta probabilidad de justificar la competencia y de legitimar el individualismo moral, mientras que rechaza tanto la acción estratégica como la individualidad en la esfera expresiva. Esto se ve reflejado en las altas probabilidades, mayores a la del resto de los grupos, de rechazar la homosexualidad (100%), el divorcio (79%) y el sexo premarital (82%). Por otro lado, parece ser el grupo donde la interdependencia relacional cobra más importancia en las autoconcepciones de los individuos. Por último, la probabilidad de que los miembros de esta clase prefieran la seguridad por encima de la libertad es del 70%.
+
+Al igual que el individualismo autoritario, este grupo se caracteriza por tener una edad promedio superior al de la muestra (47,8 años promedio). Esto se refleja en que la proporción de personas menores de 30 en este perfil alcanza solo el 12%, mientras que el 28% tiene 60 años o más. En general, los individualistas conservadores se encuentran políticamente más a la centro derecha (36%), son más católicos (63%) que otros grupos y viven en ciudades más pequeñas (el 27% vive en ciudades menores a 100.000 habitantes). También es el grupo que más reporta ingresos subjetivos altos (14%, el doble del promedio de la muestra). Sin embargo, esto no se ve reflejado en el tipo de trabajos que realizan, pues la proporción de personas pertenecientes a la clase media y clase de servicios en este perfil se encuentran en torno al promedio de la muestra.  
+
+El lema "Dios, Patria y Familia" podría describir bien a este grupo. ¿Qué lo diferencia del individualismo autoritario? Principalmente su mayor compromiso con los valores del individualismo moral. Por ejemplo, la probabilidad de presentar una alta valoración de los derechos civiles alcanza un 73%. Por estos motivos, se ha decido denominar a este perfil como un **individualismo conservador**
+
+La clase 3 tiene algunos rasgos similares con el individualismo conservador. Por ejemplo, muestra una alta probabilidad de legitimar la competencia, y también el individualismo moral, además de rechazar de forma considerable las acciones estratégicas. Sin embargo, se distancia de sus pares conservadores en dos aspectos fundamentales: Por un lado, en la alta legitimidad del individualismo expresivo que se observa en este grupo. Por otro, en que es la única clase donde la probabilidad de elegir la libertad es mayor que la de preferir la seguridad. Se le ha denomidado como **individualismo liberal**, pues, sus valores parecen apuntar al respeto a la libertad y a la tolerancia de la acción individual en todas las esferas de la vida social, aunque manteniendo el respeto por algunas normas de convivencia. A pesar de que podría asemejarse al "individualismo institucional" descrito por Martuccelli [-@martuccelli2010], se diferencia de este por su marcado carácter relacional -- lo que parece ser un rasgo transversal a las cuatro clases de individualismo identificadas. 
 
 Por un lado, este grupo se destaca por tener la mayor proporción de personas en la izquierda y la centro izquierda del espectro político (28%), pero también el que alberga la mayor cantidad de personas sin identificación política (29%). Por otro lado, en contraste con las dos clases anteriores, este grupo se muestra como menos religioso, con un 36% de sus miembros declarando no tener afiliación religiosa. Es el perfil con la menor cantidad de personas pertenecientes a la clase trabajadora (40%), pero presenta la mayor proporción de individuos pertenecientes a las clases intermedias (37%).
 
-Finalmente, el *individualismo agéntico* se caracteriza por legitimar la acción individual en todas las esferas, incluyendo (y de manera única en este sentido) las acciones estratégicas. Aunque muestra niveles menores de interdependencia colectiva en comparación con sus pares liberals y conservadores, los niveles de independencia en esta clase son más altos que los observados en el individualismo autoritario. La preferencia por la seguridad por sobre la libertad en este grupo alcanza un 63%, en torno al promedio de la población. El carácter agéntico de este perfil, siguiendo el trabajo de Araujo y Martuccelli [-@araujo2012], se manifiesta en la confianza que este grupo deposita en sus propias habilidades, lo que los llevaría a legitimar en mayor medida acciones que transgreden normas sociales para obtener beneficios personales.
+Finalmente, la clase 4 se caracteriza por legitimar la acción individual en todas las esferas, incluyendo (y de manera única en este sentido) las acciones estratégicas. Aunque muestra niveles menores de interdependencia colectiva en comparación con sus pares liberales y conservadores, los niveles de independencia en esta clase son más altos que los observados en el individualismo autoritario. La preferencia por la seguridad por sobre la libertad en este grupo alcanza un 63%, en torno al promedio de la población. Siguiendo el trabajo de Araujo y Martuccelli [-@araujo2012], esto grupo enfatizaría la confianza depositada en sus propias habilidades, lo que los llevaría a legitimar en mayor medida acciones que transgreden normas sociales para obtener beneficios personales. Por esta razón, se ha decidido denominar a este perfil como **individualismo agéntico**
 
 De los cuatro perfiles, este es el único en el que se observan diferencias en la composición de género, mostrando una leve feminización (56%). Además, es un grupo más joven, con una edad promedio de 40,3 años. El 28% de las personas en esta clase son menores de 30 años, mientras que solo el 9% tiene 60 años o más. A pesar de que el 64% vive fuera de la Región Metropolitana, se diferencia del "individualismo conservador" en que se concentra en ciudades con más de 100,000 habitantes: es menos un individualismo de capitales provinciales y más un individualismo de capitales regionales. Comparte con el individualismo liberal una baja identificación religiosa, ya que el 37% de sus miembros declara no tener religión. Finalmente, es el grupo que menos reporta ingresos subjetivos altos (4%), el que más lo hace en ingresos subjetivos medios-bajos (57%), y el que tiene la menor proporción de personas en las clases de servicios (20%).
 
-## Modelo de Regresión Lineal
+## Análsis de Varianza y Modelos de Regresión
 
-En la Tabla 4.2, se presenta el promedio de apoyo a la democracia delegativa para cada perfil de individualismo identificado. Se puede observar que el grupo del Individualismo Agéntico muestra los mayores niveles de apoyo (2,64), seguido por el Individualismo Autoritario (2,58). En el extremo opuesto, se encuentra el Individualismo Conservador (2,13), mientras que el Individualismo liberal se sitúa en torno al promedio.
+En la Tabla 4.2, se presenta el promedio de apoyo a la democracia delegativa para cada perfil de individualismo identificado. Se puede observar que el grupo del Individualismo Agéntico muestra los mayores niveles de apoyo ($\bar{x}$=2,64, $s$=0,77), seguido por el Individualismo Autoritario ($\bar{x}$=2,58, $s$=0,68). En el extremo opuesto, se encuentra el Individualismo Conservador ($\bar{x}$=2,13, $s$=0,8), mientras que el Individualismo liberal se sitúa en torno al promedio.
 
 ```{r, echo=F}
 
@@ -253,7 +279,7 @@ create_table5 <- function(df) {
   align(align = "center", part = "all") %>% 
   flextable::set_caption("Promedio Apoyo a Democracia Delegativa por perfiles de individualismo") %>%
   colformat_num(big.mark = ".", decimal.mark = ",") %>%
-  font(fontname = "Cambria", part="all") %>%
+  font(fontname = "Helvetica", part="all") %>%
   fontsize(size=11, part="all")
   } else {
     kable(tab5, booktabs= TRUE,
@@ -271,7 +297,7 @@ create_table5(tab5)
 ```
 \FloatBarrier
 
-Cabe destacar que la diferencia entre el Individualismo Agéntico y el Individualismo Autoritario se debe principalmente al apoyo a que los expertos tomen decisiones políticas. Así, mientras el apoyo a un liderazgo fuerte es idéntico en ambos perfiles (2,56), el apoyo a los expertos es superior entre los miembros del Individualismo Agéntico (2,69).
+Cabe destacar que la diferencia entre el Individualismo Agéntico y el Individualismo Autoritario se debe principalmente al apoyo a que los expertos tomen decisiones políticas. Así, mientras el apoyo a un liderazgo fuerte es idéntico en ambos perfiles ($\bar{x}$=2,56), el apoyo a los expertos es superior entre los miembros del Individualismo Agéntico ($\bar{x}$=2,69, $s$=0,86).
 
 Como paso previo, se realizó un ANOVA para comprobar si existen diferencias significativas en las medias del apoyo a la democracia delegativa de los perfiles de individualismo. Los resultados apuntan a rechazar la hipótesis nula de que las medias de los grupos son iguales ($F$= 12,8; $p$<0,001). De tal modo, se procederá a estimar un modelo de regresión lineal que permita establecer si estas diferencias se mantienen una vez controladas por otras variables. 
 
@@ -289,7 +315,7 @@ modelos <- list("(1)" = m1,
 
 cm2 <- c("(Intercept)"= "Constante",
          "claseIndivididualismo Autoritario"= "Autoritario",
-         "claseIndividualismo Cívico"= "Liberal",
+         "claseIndividualismo Liberal"= "Liberal",
          "claseIndividualismo Agéntico"= "Agéntico",
          "generoMujer"= "Mujer",
          "Q262"= "Edad",
@@ -332,7 +358,7 @@ create_table6 <- function(df) {
   align(align = "center", part = "all") %>% 
   flextable::set_caption("Comparación Modelos de Regresión Lineal") %>%
   colformat_num(big.mark = ".", decimal.mark = ",") %>%
-  font(fontname = "Cambria", part="all") %>%
+  font(fontname = "Helvetica", part="all") %>%
   fontsize(size=11, part="all")
   } else {msummary(modelos,
          fmt = fmt_statistic(estimate = 3),
@@ -346,8 +372,8 @@ create_table6 <- function(df) {
          notes= list("Nota. *:p<0,05; **:p<0.01; ***p<0.001"),
          output= "latex",
          escape= FALSE) %>%
-  kable_styling(full_width = T,
-                font_size = 8.5) %>%
+  kable_styling(full_width = T, latex_options = "hold_position",
+                html_font = "Helvetica") %>%
     add_header_above(c(" " = 1,
                        "Variable Dependiente: Apoyo a la Democracia Delegativa" = 3),
                      escape = FALSE) %>%
@@ -368,11 +394,11 @@ create_table6(modelos)
 
 El Modelo 2 incluye únicamente las variables de control como predictoras. De esta manera, se observa que ni el género ni la edad muestran una relación significativa con el apoyo a la democracia delegativa. Sin embargo, vivir en zonas rurales ($\beta$= -0,31; $p$<0,01) o en ciudades de menos de 100,000 habitantes ($\beta$= -0,36; $p$<0,001), así como identificarse políticamente como de centro-derecha ($\beta$= -0,32; $p$<0,01) está asociado con un efecto negativo y significativo sobre el apoyo a la democracia delegativa. Por otro lado, el nivel de ingresos subjetivo ($\beta$= 0,06; $p$<0,05) y pertenecer a la clase trabajadora ($\beta$= 0,29; $p$<0,01) evidencian una relación positiva y significativa con el apoyo a la democracia delegativa. Este modelo explica el 6% de la varianza en el apoyo a la democracia delegativa.
 
-Finalmente, en el Modelo 3 se incluye tanto la variable categórica de individualismo como las variables de control. La principal diferencia respecto al Modelo 1 es que la asociación entre apoyo a la democracia delegativa e individualismo liberal deja de ser significativa ($\beta$= -0,18, $p$=0,075). Posiblemente, esto se deba a su interacción con otras variables de control, particularmente con la identificación política. 
+Finalmente, en el Modelo 3 se incluye tanto la variable categórica de individualismo como las variables de control. La principal diferencia respecto al Modelo 1 es que la asociación entre el apoyo a la democracia delegativa y el individualismo liberal, en relación al individualismo conservador, deja de ser significativa ($\beta$= -0,18, $p$=0,075). Posiblemente, esto se deba a su interacción con otras variables de control, particularmente con la identificación política. 
 
-Sin embargo, se mantiene la evidencia a favor de que, una vez controlado por las demás variables y en comparación con ser un individualista liberal, ser un individualista autoritario ($\beta$= 0,27, $p$<0,01),  o un individualista agéntico ($\beta$= 0,33, $p$<0,001), está asociado positivamente al apoyo a la democracia delegativa. En total, este último modelo explica el 12% de la varianza observada en el apoyo a la democracia delegativa.
+Sin embargo, se mantiene la evidencia a favor de que, una vez controlado por las demás variables y en comparación con ser un individualista conservador, ser un individualista autoritario ($\beta$= 0,27, $p$<0,01),  o un individualista agéntico ($\beta$= 0,33, $p$<0,001), está asociado positivamente al apoyo a la democracia delegativa. En total, este último modelo explica el 12% de la varianza observada en el apoyo a la democracia delegativa.
 
-Para comprender mejor cómo se comporta esta relación, se realizaron dos modelos de regresión logística, uno para cada indicador que compone el índice de apoyo a la democracia delegativa. Esto se hace con el propósito de establecer si las dimensiones del constructo se asocian de la misma manera con los perfiles de individualismo.  Se recodificaron las variables de modo que 0 representará un bajo apoyo y 1 un alto apoyo. En la Tabla 4.4, se resumen los resultados obtenidos
+Para comprender mejor cómo se comporta esta relación, se realizaron dos modelos de regresión logística, uno para cada indicador que compone el índice de apoyo a la democracia delegativa. Esto se hace con el propósito de establecer si las dimensiones del constructo se asocian de la misma manera con los perfiles de individualismo, o si se diferencias del índice en su conjunto.  Se recodificaron las variables de modo que 0 representará un bajo apoyo y 1 un alto apoyo. En la Tabla 4.4, se resumen los resultados obtenidos
 
 ```{r, echo=FALSE, results='asis'}
 
@@ -384,7 +410,7 @@ modelos2 <- list("Apoyo Líder Fuerte" = m4,
 
 cm2b <- c("(Intercept)"= "Constante",
          "claseIndivididualismo Autoritario"= "Autoritario",
-         "claseIndividualismo Cívico"= "Liberal",
+         "claseIndividualismo Liberal"= "Liberal",
          "claseIndividualismo Agéntico"= "Agéntico",
          "generoMujer"= "Mujer",
          "Q262"= "Edad",
@@ -427,7 +453,7 @@ create_table7<- function(df) {
   align(align = "center", part = "all") %>% 
   flextable::set_caption("Modelos de Regresión Logística (Estmación de Odds Ratio)") %>%
   colformat_num(big.mark = ".", decimal.mark = ",") %>%
-  font(fontname = "Cambria", part="all") %>%
+  font(fontname = "Helvetica", part="all") %>%
   fontsize(size=11, part="all")
   } else {msummary(modelos2,
          exponentiate = TRUE, 
@@ -443,7 +469,8 @@ create_table7<- function(df) {
          output= "latex",
          escape= FALSE) %>%
   kable_styling(full_width = T,
-                font_size = 8.5) %>%
+                html_font = "Helvetica",
+                latex_options = "hold_position") %>%
   column_spec(1, width = "5cm", latex_valign = "m") %>% 
  pack_rows("Individualismo (1 = Conservador)", 2, 4) %>%
   pack_rows("Género (1 = Hombre)", 5, 5) %>%
@@ -460,6 +487,6 @@ create_table7(modelos2)
 
 Se observa que la asociación positiva entre el individualismo agéntico y el apoyo a la democracia delegativa se mantiene tanto para el apoyo a un líder fuerte ($OR$=2,9; $p$<0,001) como para el apoyo a expertos ($OR$=4,8; $p$<0,001). Lo mismo ocurre en el caso del individualismo autoritario ($OR_{lider}$=3,17; $p$<0,001. $OR_{expertos}$=2,45; $p$<0,01). Es interesante destacar que los *odds ratios* para apoyo a un líder fuerte son superiores entre los individualistas autoritarios. Por el contrario, los *odds ratios* para el apoyo a expertos son mayores en los individualistas agénticos. 
 
-Finalmente, aunque se mantiene la relación positiva con el individualismo liberal, esta no es significativa ni para el apoyo a líderes fuertes ($OR$=0,45; $p$=0,12), ni para el apoyo a expertos ($OR$=0,33; $p$=0,25).
+Finalmente, aunque se mantiene la relación positiva con el individualismo liberal, nuevamente no es significativa ni para el apoyo a líderes fuertes ($OR$=0,45; $p$=0,12), ni para el apoyo a expertos ($OR$=0,33; $p$=0,25).
 
 [^4]: En una escala del 1 al 10, se consideró como ingreso subjetivo bajo del 1 al 3; medio-baja del 4 al 5; medio-alto del 6 al 7; y alto del 8 al 10. 

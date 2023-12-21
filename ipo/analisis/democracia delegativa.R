@@ -81,7 +81,8 @@ tab7 <- df %>% mutate(edad= case_when(Q262<30 ~ "Menores de 30",
                                       Q262>=60 ~ "Mayores de 60")) %>%
   group_by(edad) %>% summarise(Lider= mean(Q235, na.rm=T),
                                Expertos = mean(Q236, na.rm=T),
-                               Delegativa= mean(dd, na.rm=T)) %>% rename(cat = edad)
+                               Delegativa= mean(dd, na.rm=T),
+                               desviacion= sd(dd, na.rm=T)) %>% rename(cat = edad)
 tab7 # Tampoco hay tanta diferencia por edad. 
 
 # Democracia delegativa y educación
@@ -129,7 +130,8 @@ tab9 <- df %>% mutate(id_pol= case_when(Q240<3 & Q240>0~ "Izquierda",
                                         Q240<0 ~ "Ninguna")) %>%
   group_by(id_pol) %>% summarise(Lider= mean(Q235, na.rm=T),
                                  Expertos = mean(Q236, na.rm=T),
-                                 Delegativa= mean(dd, na.rm=T)) %>% rename(cat = id_pol)
+                                 Delegativa= mean(dd, na.rm=T),
+                                 desviacion= sd(dd, na.rm=T)) %>% rename(cat = id_pol)
 tab9
 
 # Democracia delegativa e ingresos subjetivos
@@ -141,7 +143,8 @@ tab11 <- df %>% filter(Q288 !=is.na(Q288)) %>%
                              Q288>=8 ~ "Ingresos Altos")) %>%
   group_by(ingresos) %>% summarise(Lider= mean(Q235, na.rm=T),
                                    Expertos = mean(Q236, na.rm=T),
-                                   Delegativa= mean(dd, na.rm=T)) %>% rename(cat = ingresos)
+                                   Delegativa= mean(dd, na.rm=T),
+                                   desviacion= sd(dd, na.rm=T)) %>% rename(cat = ingresos)
 tab11  
 
 # Democracia delegativa y religión
@@ -153,7 +156,8 @@ tab12 <- df %>%
                              Q289>2 ~ "Otra")) %>%
   group_by(religion) %>% summarise(Lider= mean(Q235, na.rm=T),
                                    Expertos = mean(Q236, na.rm=T),
-                                   Delegativa= mean(dd, na.rm=T)) %>% rename(cat = religion)
+                                   Delegativa= mean(dd, na.rm=T),
+                                   desviacion= sd(dd, na.rm=T)) %>% rename(cat = religion)
 tab12
 
 # Democracia delegativa y democracia

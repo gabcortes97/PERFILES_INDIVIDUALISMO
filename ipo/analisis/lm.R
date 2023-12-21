@@ -7,7 +7,7 @@ datos <- readRDS("ipo/input/Datos/data.rds")
 datos$clase <- factor(datos$clase, levels = c(1,2,3,4),
                       labels= c("Individidualismo Autoritario",
                                 "Individualismo Conservador",
-                                "Individualismo Cívico",
+                                "Individualismo Liberal",
                                 "Individualismo Agéntico"))
 table(datos$clase)
 
