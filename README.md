@@ -1,5 +1,5 @@
-# tesisfacsodown
-Plantilla (template) para escritura y publicación de tesis/seminarios/memorias en FACSO UChile en formato pdf/html vía bookdown  (R)
+
+Plantilla basada en tesisfacsodown del profesor Juan Carlos Castillo: 
 [https://juancarloscastillo.github.io/tesisfacsodown/](https://juancarloscastillo.github.io/tesisfacsodown/)
 
 Publicación Tesis Gabriel Cortés: https://gabcortes97.github.io/tesis3/
