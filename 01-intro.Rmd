@@ -1,5 +1,7 @@
 # Antecedentes
 
+> `r if (knitr::is_html_output()) '*"If success and failure are the result of individual effort, those at the top can hardly be blamed -- unless, of course, they are politician"* (Bellah et al, 1996,   p.xv)'`
+
 ```{r, echo=F, include=F, warning=FALSE}
 library(tidyverse)
 library(knitr)
