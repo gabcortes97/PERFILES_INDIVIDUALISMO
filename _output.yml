@@ -6,7 +6,7 @@ bookdown::gitbook:
       before: |
         <li><a href="https://gabcortes97.github.io/tesis3>Gabriel Cortés Paredes</a></li>
       after: |
-        <li><a href="https://github.com/gabcortes97" target="blank">Publicado con bookdown</a></li>
+        <li><a href="https://github.com/gabcortes97/tesis3" target="blank">Publicado con bookdown</a></li>
     edit: https://github.com/gabcortes97/tesis3/edit/main/%s
     sharing:
       github: yes
