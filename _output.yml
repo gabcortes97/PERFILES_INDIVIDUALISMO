@@ -12,7 +12,7 @@ bookdown::gitbook:
       github: yes
       facebook: no
       twitter: no
-    download: ["pdf", "word"]
+    download: ["pdf"]
 
 bookdown::pdf_book:
   includes:

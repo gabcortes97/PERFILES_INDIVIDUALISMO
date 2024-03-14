@@ -36,4 +36,6 @@ abstract: |
  Los resultados sugieren que la relación entre el individualismo y el apoyo a la democracia delegativa es significativa, pero divergente entre distintos grupos. Esto ilustra un panorama general en el que las manifestaciones del individualismo, y su relación con otros fenómenos, aparecen como más complejas de lo que otros estudios han propuesto.
  
  **Conceptos Claves:** Individualismo -- Apoyo a Democracia Delegativa -- Individualización -- Análisis de Clases Latentes
+
+
 ---

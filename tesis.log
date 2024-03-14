@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.15)  16 NOV 2023 18:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.31)  14 MAR 2024 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tesis.tex
 (./tesis.tex
-LaTeX2e <2023-11-01>
-L3 programming layer <2023-11-09>
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
 (./templates/facsothesis.cls
 Document Class: templates/facsothesis 2004/01/27 The Reed College Thesis Class
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
@@ -13,15 +13,15 @@ Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/base/bk12.clo
 File: bk12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count186
-\c@chapter=\count187
-\c@section=\count188
-\c@subsection=\count189
-\c@subsubsection=\count190
-\c@paragraph=\count191
-\c@subparagraph=\count192
-\c@figure=\count193
-\c@table=\count194
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
@@ -37,16 +37,16 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip57
 \f@nch@O@orf=\skip58
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2023/11/06 4.5b verbatim text (tvz,hv)
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-\FV@CodeLineNo=\count195
+\FV@CodeLineNo=\count196
 \FV@InFile=\read2
 \FV@TabBox=\box51
-\c@FancyVerbLine=\count196
-\FV@StepNumber=\count197
+\c@FancyVerbLine=\count197
+\FV@StepNumber=\count198
 \FV@OutFile=\write3
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
@@ -89,9 +89,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count198
-\Gm@cntv=\count199
-\c@Gm@tempcnt=\count266
+\Gm@cnth=\count199
+\Gm@cntv=\count266
+\c@Gm@tempcnt=\count267
 \Gm@bindingoffset=\dimen145
 \Gm@wd@mp=\dimen146
 \Gm@odd@mp=\dimen147
@@ -110,17 +110,17 @@ Package geometry Warning: Over-specification in `v'-direction.
     `height' (652.70628pt) is ignored.
 
 )) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2023/11/11 v3.97 The Babel package
-\babel@savecnt=\count267
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count268
 \U@D=\dimen153
 \l@unhyphenated=\language4
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
-\bbl@dirlevel=\count268
+\bbl@dirlevel=\count269
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks21
-\es@quotdepth=\count269
+\es@quotdepth=\count270
 Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
@@ -162,14 +162,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count270
+\inf@bad=\count271
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count271
-\leftroot@=\count272
+\uproot@=\count272
+\leftroot@=\count273
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count273
-\DOTSCASE@=\count274
+\classnum@=\count274
+\DOTSCASE@=\count275
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -182,20 +182,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen158
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count275
+\macc@depth=\count276
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count276
+\c@MaxMatrixCols=\count277
 \dotsspace@=\muskip16
-\c@parentequation=\count277
-\dspbrk@lvl=\count278
+\c@parentequation=\count278
+\dspbrk@lvl=\count279
 \tag@help=\toks23
-\row@=\count279
-\column@=\count280
-\maxfields@=\count281
+\row@=\count280
+\column@=\count281
+\maxfields@=\count282
 \andhelp@=\toks24
 \eqnshift@=\dimen159
 \alignsep@=\dimen160
@@ -235,17 +235,17 @@ Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \LTright=\skip67
 \LTpre=\skip68
 \LTpost=\skip69
-\LTchunksize=\count282
+\LTchunksize=\count283
 \LTcapwidth=\dimen165
 \LT@head=\box54
 \LT@firsthead=\box55
 \LT@foot=\box56
 \LT@lastfoot=\box57
 \LT@gbox=\box58
-\LT@cols=\count283
-\LT@rows=\count284
-\c@LT@tables=\count285
-\c@LT@chunks=\count286
+\LT@cols=\count284
+\LT@rows=\count285
+\c@LT@tables=\count286
+\c@LT@chunks=\count287
 \LT@p@ftn=\toks33
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -259,12 +259,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen173
 \cmidrulekern=\dimen174
 \defaultaddspace=\dimen175
-\@cmidla=\count287
-\@cmidlb=\count288
+\@cmidla=\count288
+\@cmidlb=\count289
 \@aboverulesep=\dimen176
 \@belowrulesep=\dimen177
-\@thisruleclass=\count289
-\@lastruleclass=\count290
+\@thisruleclass=\count290
+\@lastruleclass=\count291
 \@thisrulewidth=\dimen178
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
@@ -274,9 +274,15 @@ Package: chemarr 2016/05/16 v1.3 Arrows for chemical reactions (HO)
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-11-09 v7.01f Hypertext links for LaTeX
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+(/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
@@ -285,20 +291,12 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+)) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-11-09 v2.55 Cross-referencing by name of section
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
@@ -306,70 +304,70 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count291
+\c@section@level=\count292
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count292
+\etb@tempcnta=\count293
 )
 \@linkdim=\dimen179
-\Hy@linkcounter=\count293
-\Hy@pagecounter=\count294
+\Hy@linkcounter=\count294
+\Hy@pagecounter=\count295
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-11-09 v7.01f Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count295
+\Hy@SavedSpaceFactor=\count296
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-11-09 v7.01f Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4054.
-Package hyperref Info: Hyper figures OFF on input line 4171.
-Package hyperref Info: Link nesting OFF on input line 4176.
-Package hyperref Info: Hyper index ON on input line 4179.
-Package hyperref Info: Plain pages OFF on input line 4186.
-Package hyperref Info: Backreferencing OFF on input line 4191.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4438.
-\c@Hy@tempcnt=\count296
-LaTeX Info: Redefining \url on input line 4776.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count297
+LaTeX Info: Redefining \url on input line 4784.
 \XeTeXLinkMargin=\dimen180
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count297
+\Fld@menulength=\count298
 \Field@Width=\dimen181
 \Fld@charsize=\dimen182
-Package hyperref Info: Hyper figures OFF on input line 6055.
-Package hyperref Info: Link nesting OFF on input line 6060.
-Package hyperref Info: Hyper index ON on input line 6063.
-Package hyperref Info: backreferencing OFF on input line 6070.
-Package hyperref Info: Link coloring ON on input line 6073.
-Package hyperref Info: Link coloring with OCG OFF on input line 6080.
-Package hyperref Info: PDF/A mode OFF on input line 6085.
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring ON on input line 6081.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count298
-\c@Item=\count299
-\c@Hfootnote=\count300
+\Hy@abspage=\count299
+\c@Item=\count300
+\c@Hfootnote=\count301
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2023-11-09 v7.01f Hyperref driver for pdfTeX
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count301
-\c@bookmark@seq@number=\count302
+\Fld@listcount=\count302
+\c@bookmark@seq@number=\count303
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -391,7 +389,7 @@ Package: titlesec 2023/10/27 v2.16 Sectioning titles
 \titlewidthfirst=\dimen187
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count303
+\c@float@type=\count304
 \float@exts=\toks35
 \float@box=\box60
 \@float@everytoks=\toks36
@@ -401,7 +399,7 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count304
+\c@r@tfl@t=\count305
 \rotFPtop=\skip73
 \rotFPbot=\skip74
 \rot@float@box=\box62
@@ -415,7 +413,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip75
 \bibsep=\skip76
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count305
+\c@NAT@ctr=\count306
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
@@ -430,8 +428,8 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen195
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count306
-\c@continuedfloat=\count307
+\c@caption@flags=\count307
+\c@continuedfloat=\count308
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
@@ -451,13 +449,13 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip79
-\multirow@cntb=\count308
+\multirow@cntb=\count309
 \multirow@dima=\skip80
 \bigstrutjot=\dimen198
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen199
 \WF@size=\dimen256
-\c@WF@wrappedlines=\count309
+\c@WF@wrappedlines=\count310
 \WF@box=\box65
 \WF@everypar=\toks39
 Package: wrapfig 2003/01/31  v 3.6
@@ -465,7 +463,7 @@ Package: wrapfig 2003/01/31  v 3.6
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 \everycr=\toks40
 \minrowclearance=\skip81
-\rownum=\count310
+\rownum=\count311
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
@@ -479,16 +477,16 @@ Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box66
-\sift@deathcycles=\count311
+\sift@deathcycles=\count312
 \@vwid@loff=\dimen257
 \@vwid@roff=\dimen258
 )
-\c@taburow=\count312
-\tabu@nbcols=\count313
-\tabu@cnt=\count314
-\tabu@Xcol=\count315
-\tabu@alloc=\count316
-\tabu@nested=\count317
+\c@taburow=\count313
+\tabu@nbcols=\count314
+\tabu@cnt=\count315
+\tabu@Xcol=\count316
+\tabu@alloc=\count317
+\tabu@nested=\count318
 \tabu@target=\dimen259
 \tabu@spreadtarget=\dimen260
 \tabu@naturalX=\dimen261
@@ -522,7 +520,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \UL@skip=\skip84
 \UL@hook=\toks43
 \UL@height=\dimen268
-\UL@pe=\count318
+\UL@pe=\count319
 \UL@pixel=\dimen269
 \ULC@box=\box74
 Package: ulem 2019/11/18
@@ -530,7 +528,7 @@ Package: ulem 2019/11/18
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen271
-\c@nlinenum=\count319
+\c@nlinenum=\count320
 \TeXr@lab=\toks44
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
@@ -550,37 +548,40 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 )
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 182.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 198.
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 ) (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count320
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count321
 \l__pdf_internal_box=\box75
 ) (./tesis.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
+
+LaTeX Warning: Label `tab:unnamed-chunk-14' multiply defined.
+
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -621,9 +622,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 182.
-LaTeX Info: Redefining \% on input line 182.
-Package hyperref Info: Link coloring ON on input line 182.
+LaTeX Info: Redefining \. on input line 198.
+LaTeX Info: Redefining \% on input line 198.
+Package hyperref Info: Link coloring ON on input line 198.
 (./tesis.out) (./tesis.out)
 \@outlinefile=\write4
 \openout4 = `tesis.out'.
@@ -635,7 +636,7 @@ Package caption Info: End \AtBeginDocument code.
 <images/udp.png, id=68, 367.3725pt x 138.5175pt>
 File: images/udp.png Graphic file (type png)
 <use images/udp.png>
-Package pdftex.def Info: images/udp.png  used on input line 187.
+Package pdftex.def Info: images/udp.png  used on input line 203.
 (pdftex.def)             Requested size: 367.37158pt x 138.51715pt.
 [1
 Non-PDF special ignored!
@@ -680,7 +681,7 @@ Non-PDF special ignored!
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 194.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 209.
 [1
 
 
@@ -690,25 +691,31 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
 
 
 
+] [3] [4
+
+
+] [5] [6
+
+
 ] (./tesis.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 5.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 4.
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 (/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write5
 \openout5 = `tesis.toc'.
 
-[3] [4
+[7] [8
 
 ] (./tesis.lot
 LaTeX Info: Redefining \. on input line 1.
@@ -717,7 +724,7 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write6
 \openout6 = `tesis.lot'.
 
-[5] [6
+[9] [10
 
 ] (./tesis.lof
 LaTeX Info: Redefining \. on input line 1.
@@ -726,290 +733,276 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lof=\write7
 \openout7 = `tesis.lof'.
 
-[7] [8
-
-]
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.226 \chapter{Antecedentes}\label{antecedentes}}
-                                                  [1
-
-]
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.226 \chapter{Antecedentes}\label{antecedentes}}
-                                                  [2
+[11] [12
 
 ]
 Cap\'{\i }tulo 1.
-[3]
-LaTeX Info: Redefining \. on input line 239.
-LaTeX Info: Redefining \% on input line 239.
-[4] [5]
-LaTeX Info: Redefining \. on input line 259.
-LaTeX Info: Redefining \% on input line 259.
-[6]
-Cap\'{\i }tulo 2.
-[7
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.267 
+       [1
 
 ]
-LaTeX Info: Redefining \. on input line 279.
-LaTeX Info: Redefining \% on input line 279.
-[8]
-LaTeX Info: Redefining \. on input line 289.
-LaTeX Info: Redefining \% on input line 289.
-[9]
+LaTeX Info: Redefining \. on input line 271.
+LaTeX Info: Redefining \% on input line 271.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.271 
+       [2] [3]
 LaTeX Info: Redefining \. on input line 295.
 LaTeX Info: Redefining \% on input line 295.
+[4]
+Cap\'{\i }tulo 2.
+[5
+
+]
+LaTeX Info: Redefining \. on input line 315.
+LaTeX Info: Redefining \% on input line 315.
+[6]
+LaTeX Info: Redefining \. on input line 326.
+LaTeX Info: Redefining \% on input line 326.
+[7]
+LaTeX Info: Redefining \. on input line 332.
+LaTeX Info: Redefining \% on input line 332.
+[8]
+LaTeX Info: Redefining \. on input line 340.
+LaTeX Info: Redefining \% on input line 340.
+[9]
+LaTeX Info: Redefining \. on input line 348.
+LaTeX Info: Redefining \% on input line 348.
 [10]
-LaTeX Info: Redefining \. on input line 303.
-LaTeX Info: Redefining \% on input line 303.
+LaTeX Info: Redefining \. on input line 360.
+LaTeX Info: Redefining \% on input line 360.
 [11]
-LaTeX Info: Redefining \. on input line 311.
-LaTeX Info: Redefining \% on input line 311.
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
 [12]
-LaTeX Info: Redefining \. on input line 322.
-LaTeX Info: Redefining \% on input line 322.
+LaTeX Info: Redefining \. on input line 390.
+LaTeX Info: Redefining \% on input line 390.
 [13]
-LaTeX Info: Redefining \. on input line 334.
-LaTeX Info: Redefining \% on input line 334.
+LaTeX Info: Redefining \. on input line 398.
+LaTeX Info: Redefining \% on input line 398.
 [14]
-LaTeX Info: Redefining \. on input line 351.
-LaTeX Info: Redefining \% on input line 351.
+LaTeX Info: Redefining \. on input line 406.
+LaTeX Info: Redefining \% on input line 406.
 [15]
-LaTeX Info: Redefining \. on input line 359.
-LaTeX Info: Redefining \% on input line 359.
+LaTeX Info: Redefining \. on input line 422.
+LaTeX Info: Redefining \% on input line 422.
 [16]
-LaTeX Info: Redefining \. on input line 367.
-LaTeX Info: Redefining \% on input line 367.
+LaTeX Info: Redefining \. on input line 430.
+LaTeX Info: Redefining \% on input line 430.
 [17]
-LaTeX Info: Redefining \. on input line 381.
-LaTeX Info: Redefining \% on input line 381.
-[18]
-LaTeX Info: Redefining \. on input line 388.
-LaTeX Info: Redefining \% on input line 388.
-[19]
-Underfull \hbox (badness 1383) in paragraph at lines 395--396
+Underfull \hbox (badness 1383) in paragraph at lines 437--438
 \T1/phv/m/n/12 em-pí-ri-ca a es-ta for-ma de en-ten-der el cons-truc-to: Mien-tras en-tre europeos-
  []
 
-LaTeX Info: Redefining \. on input line 396.
-LaTeX Info: Redefining \% on input line 396.
+LaTeX Info: Redefining \. on input line 438.
+LaTeX Info: Redefining \% on input line 438.
+[18]
+LaTeX Info: Redefining \. on input line 444.
+LaTeX Info: Redefining \% on input line 444.
+[19]
+LaTeX Info: Redefining \. on input line 446.
+LaTeX Info: Redefining \% on input line 446.
 [20]
-LaTeX Info: Redefining \. on input line 402.
-LaTeX Info: Redefining \% on input line 402.
-[21]
-LaTeX Info: Redefining \. on input line 404.
-LaTeX Info: Redefining \% on input line 404.
-[22]
 Cap\'{\i }tulo 3.
-[23
+[21
 
 ]
-LaTeX Info: Redefining \. on input line 463.
-LaTeX Info: Redefining \% on input line 463.
+LaTeX Info: Redefining \. on input line 506.
+LaTeX Info: Redefining \% on input line 506.
+[22]
+LaTeX Info: Redefining \. on input line 524.
+LaTeX Info: Redefining \% on input line 524.
+[23]
+LaTeX Info: Redefining \. on input line 529.
+LaTeX Info: Redefining \% on input line 529.
 [24]
-LaTeX Info: Redefining \. on input line 477.
-LaTeX Info: Redefining \% on input line 477.
+LaTeX Info: Redefining \. on input line 541.
+LaTeX Info: Redefining \% on input line 541.
 [25]
-LaTeX Info: Redefining \. on input line 488.
-LaTeX Info: Redefining \% on input line 488.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 658.
+LaTeX Info: Redefining \% on input line 658.
 [26]
-LaTeX Info: Redefining \. on input line 499.
-LaTeX Info: Redefining \% on input line 499.
+LaTeX Info: Redefining \. on input line 665.
+LaTeX Info: Redefining \% on input line 665.
 [27]
-Overfull \hbox (19.21284pt too wide) in paragraph at lines 506--606
- [][] 
+Overfull \hbox (26.14537pt too wide) in paragraph at lines 674--728
+ [] 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Info: Redefining \. on input line 608.
-LaTeX Info: Redefining \% on input line 608.
+LaTeX Info: Redefining \. on input line 729.
+LaTeX Info: Redefining \% on input line 729.
 [28]
-LaTeX Info: Redefining \. on input line 608.
-LaTeX Info: Redefining \% on input line 608.
+LaTeX Info: Redefining \. on input line 739.
+LaTeX Info: Redefining \% on input line 739.
 [29]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 675.
-LaTeX Info: Redefining \% on input line 675.
-[30
-
-]
-LaTeX Info: Redefining \. on input line 675.
-LaTeX Info: Redefining \% on input line 675.
+LaTeX Info: Redefining \. on input line 750.
+LaTeX Info: Redefining \% on input line 750.
+[30]
+LaTeX Info: Redefining \. on input line 761.
+LaTeX Info: Redefining \% on input line 761.
 [31]
-LaTeX Info: Redefining \. on input line 693.
-LaTeX Info: Redefining \% on input line 693.
-[32
+LaTeX Info: Redefining \. on input line 778.
+LaTeX Info: Redefining \% on input line 778.
+[32]
+LaTeX Info: Redefining \. on input line 781.
+LaTeX Info: Redefining \% on input line 781.
+[33] [34
 
 ]
-LaTeX Info: Redefining \. on input line 699.
-LaTeX Info: Redefining \% on input line 699.
-[33]
-LaTeX Info: Redefining \. on input line 712.
-LaTeX Info: Redefining \% on input line 712.
-[34]
 Cap\'{\i }tulo 4.
 
-Overfull \hbox (26.34697pt too wide) in paragraph at lines 722--733
+Overfull \hbox (26.34697pt too wide) in paragraph at lines 791--802
 [][] 
  []
 
-<tesis_files/figure-latex/unnamed-chunk-9-1.pdf, id=803, 469.755pt x 325.215pt>
+<tesis_files/figure-latex/unnamed-chunk-7-1.pdf, id=834, 469.755pt x 325.215pt>
+File: tesis_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use tesis_files/figure-latex/unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-7-1.pdf  used on input line 810.
+(pdftex.def)             Requested size: 443.57848pt x 307.0916pt.
+[35]
+<tesis_files/figure-latex/unnamed-chunk-8-1.pdf, id=842, 469.755pt x 325.215pt>
+File: tesis_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use tesis_files/figure-latex/unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 831.
+(pdftex.def)             Requested size: 443.57848pt x 307.0916pt.
+LaTeX Info: Redefining \. on input line 836.
+LaTeX Info: Redefining \% on input line 836.
+[36 <./tesis_files/figure-latex/unnamed-chunk-7-1.pdf>]
+LaTeX Info: Redefining \. on input line 843.
+LaTeX Info: Redefining \% on input line 843.
+[37 <./tesis_files/figure-latex/unnamed-chunk-8-1.pdf>]
+<tesis_files/figure-latex/unnamed-chunk-9-1.pdf, id=872, 469.755pt x 325.215pt>
 File: tesis_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use tesis_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 741.
-(pdftex.def)             Requested size: 354.86412pt x 245.67229pt.
-[35
-
-]
-LaTeX Info: Redefining \. on input line 762.
-LaTeX Info: Redefining \% on input line 762.
-[36 <./tesis_files/figure-latex/unnamed-chunk-9-1.pdf>]
-<tesis_files/figure-latex/unnamed-chunk-10-1.pdf, id=821, 469.755pt x 325.215pt>
+Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 855.
+(pdftex.def)             Requested size: 443.57848pt x 307.0916pt.
+LaTeX Info: Redefining \. on input line 861.
+LaTeX Info: Redefining \% on input line 861.
+[38]
+<tesis_files/figure-latex/unnamed-chunk-10-1.pdf, id=880, 469.755pt x 325.215pt>
 File: tesis_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 <use tesis_files/figure-latex/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 765.
-(pdftex.def)             Requested size: 354.86412pt x 245.67229pt.
-LaTeX Info: Redefining \. on input line 776.
-LaTeX Info: Redefining \% on input line 776.
-[37 <./tesis_files/figure-latex/unnamed-chunk-10-1.pdf>]
-<tesis_files/figure-latex/unnamed-chunk-11-1.pdf, id=841, 469.755pt x 325.215pt>
+Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 869.
+(pdftex.def)             Requested size: 443.57848pt x 307.0916pt.
+LaTeX Info: Redefining \. on input line 875.
+LaTeX Info: Redefining \% on input line 875.
+[39 <./tesis_files/figure-latex/unnamed-chunk-9-1.pdf>]
+<tesis_files/figure-latex/unnamed-chunk-11-1.pdf, id=891, 469.755pt x 325.215pt>
 File: tesis_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 <use tesis_files/figure-latex/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-11-1.pdf  used on input line 786.
-(pdftex.def)             Requested size: 354.86412pt x 245.67229pt.
-LaTeX Info: Redefining \. on input line 792.
-LaTeX Info: Redefining \% on input line 792.
-[38]
-<tesis_files/figure-latex/unnamed-chunk-12-1.pdf, id=850, 469.755pt x 325.215pt>
-File: tesis_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
-<use tesis_files/figure-latex/unnamed-chunk-12-1.pdf>
-Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-12-1.pdf  used on input line 800.
-(pdftex.def)             Requested size: 354.86412pt x 245.67229pt.
-LaTeX Info: Redefining \. on input line 806.
-LaTeX Info: Redefining \% on input line 806.
-[39 <./tesis_files/figure-latex/unnamed-chunk-11-1.pdf>]
-LaTeX Info: Redefining \. on input line 813.
-LaTeX Info: Redefining \% on input line 813.
-[40 <./tesis_files/figure-latex/unnamed-chunk-12-1.pdf>]
-LaTeX Info: Redefining \. on input line 819.
-LaTeX Info: Redefining \% on input line 819.
-[41]
-LaTeX Info: Redefining \. on input line 825.
-LaTeX Info: Redefining \% on input line 825.
+Package pdftex.def Info: tesis_files/figure-latex/unnamed-chunk-11-1.pdf  used on input line 883.
+(pdftex.def)             Requested size: 443.57848pt x 307.0916pt.
+LaTeX Info: Redefining \. on input line 889.
+LaTeX Info: Redefining \% on input line 889.
+[40 <./tesis_files/figure-latex/unnamed-chunk-10-1.pdf>]
+LaTeX Info: Redefining \. on input line 892.
+LaTeX Info: Redefining \% on input line 892.
+[41 <./tesis_files/figure-latex/unnamed-chunk-11-1.pdf>]
+LaTeX Info: Redefining \. on input line 898.
+LaTeX Info: Redefining \% on input line 898.
 [42]
-LaTeX Info: Redefining \. on input line 834.
-LaTeX Info: Redefining \% on input line 834.
+LaTeX Info: Redefining \. on input line 906.
+LaTeX Info: Redefining \% on input line 906.
 [43]
-LaTeX Info: Redefining \. on input line 856.
-LaTeX Info: Redefining \% on input line 856.
+<images/fig_esferas.png, id=929, 761.84625pt x 652.68843pt>
+File: images/fig_esferas.png Graphic file (type png)
+<use images/fig_esferas.png>
+Package pdftex.def Info: images/fig_esferas.png  used on input line 913.
+(pdftex.def)             Requested size: 443.57848pt x 380.0136pt.
+LaTeX Info: Redefining \. on input line 924.
+LaTeX Info: Redefining \% on input line 924.
 [44]
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 862.
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 862.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 862.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 862.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 862.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 862.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 862.
-
-
-LaTeX Font Warning: Font shape `U/lasy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 862.
-
-
-LaTeX Font Warning: Font shape `U/lasy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 862.
-
-LaTeX Info: Redefining \. on input line 911.
-LaTeX Info: Redefining \% on input line 911.
-[45]
-LaTeX Info: Redefining \. on input line 968.
-LaTeX Info: Redefining \% on input line 968.
+LaTeX Info: Redefining \. on input line 939.
+LaTeX Info: Redefining \% on input line 939.
+[45 <./images/fig_esferas.png>]
+LaTeX Info: Redefining \. on input line 946.
+LaTeX Info: Redefining \% on input line 946.
 [46]
-LaTeX Info: Redefining \. on input line 968.
-LaTeX Info: Redefining \% on input line 968.
+Overfull \hbox (26.8935pt too wide) in paragraph at lines 951--996
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 1000.
+LaTeX Info: Redefining \% on input line 1000.
 [47]
-LaTeX Info: Redefining \. on input line 972.
-LaTeX Info: Redefining \% on input line 972.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 1055.
+LaTeX Info: Redefining \% on input line 1055.
 [48]
+LaTeX Info: Redefining \. on input line 1057.
+LaTeX Info: Redefining \% on input line 1057.
+[49]
+LaTeX Info: Redefining \. on input line 1059.
+LaTeX Info: Redefining \% on input line 1059.
+[50]
 Cap\'{\i }tulo 5.
-[49
+[51
 
 ]
-LaTeX Info: Redefining \. on input line 989.
-LaTeX Info: Redefining \% on input line 989.
-[50] [51]
-LaTeX Info: Redefining \. on input line 1003.
-LaTeX Info: Redefining \% on input line 1003.
-[52] [53] [54
+LaTeX Info: Redefining \. on input line 1076.
+LaTeX Info: Redefining \% on input line 1076.
+[52] [53]
+LaTeX Info: Redefining \. on input line 1090.
+LaTeX Info: Redefining \% on input line 1090.
+[54] [55] [56
 
 ]
 Cap\'{\i }tulo 6.
-[55]
-LaTeX Info: Redefining \. on input line 1022.
-LaTeX Info: Redefining \% on input line 1022.
-[56] [57]
-LaTeX Info: Redefining \. on input line 1036.
-LaTeX Info: Redefining \% on input line 1036.
-[58] (./tesis.bbl [59
+[57]
+LaTeX Info: Redefining \. on input line 1117.
+LaTeX Info: Redefining \% on input line 1117.
+[58] [59]
+LaTeX Info: Redefining \. on input line 1127.
+LaTeX Info: Redefining \% on input line 1127.
+[60] (./tesis.bbl [61] [62
 
+] [63] [64] [65] [66] [67] [68] [69]) [70] [71
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 109.
-(/Users/gabrielcortes/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-) [60] [61] [62] [63] [64] [65]) [66] (./tesis.aux
+] (./tesis.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
  ***********
-LaTeX2e <2023-11-01>
-L3 programming layer <2023-11-09>
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
  ***********
 
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.75pt have occurred.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 87E861BCA0777D5E3C2FB2C8FAFADD9E;2072.
+(rerunfilecheck)             Checksum: 3F02952B4A907DA1A6DD17379E645099;2198.
  ) 
 Here is how much of TeX's memory you used:
- 17544 strings out of 476215
- 281988 string characters out of 5794689
- 1953555 words of memory out of 5000000
- 38950 multiletter control sequences out of 15000+600000
- 604373 words of font info for 104 fonts, out of 8000000 for 9000
+ 17518 strings out of 476170
+ 281837 string characters out of 5793428
+ 1955975 words of memory out of 5000000
+ 38969 multiletter control sequences out of 15000+600000
+ 606729 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,19n,79p,1339b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on tesis.pdf (76 pages, 260849 bytes).
+ 75i,17n,79p,1343b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/gabrielcortes/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on tesis.pdf (85 pages, 385915 bytes).
 PDF statistics:
- 1111 PDF objects out of 1200 (max. 8388607)
- 997 compressed objects within 10 object streams
- 231 named destinations out of 1000 (max. 500000)
- 154 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1181 PDF objects out of 1200 (max. 8388607)
+ 1051 compressed objects within 11 object streams
+ 238 named destinations out of 1000 (max. 500000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 

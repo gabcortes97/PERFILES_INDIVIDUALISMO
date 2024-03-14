@@ -10,50 +10,13 @@ La selección de esta base de datos se fundamenta en que proporciona una muestra
 
 En la Tabla 3.1 se resumen algunas de las principales variables de caracterización de la base de datos.
 
-```{r, include=F, echo=F}
-df %>% select(c(D_INTERVIEW, H_URBRURAL, Q260, Q262, Q275R, Q287, Q289))
-
-zona <- df %>% group_by(H_URBRURAL) %>% summarise(D_INTERVIEW= n()) %>%
-  mutate(Indicador = case_when(H_URBRURAL== 1 ~"Urbano",
-                         H_URBRURAL==2 ~"Rural"),
-         n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
-zona
-
-sexo <- df %>% group_by(Q260) %>% summarise(D_INTERVIEW= n()) %>%
-  mutate(Indicador = case_when(Q260== 1 ~"Hombre",
-                         Q260==2 ~"Mujer"),
-         n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
-sexo
-
-edad <- df %>% mutate(Indicador= case_when(Q262<=29 ~ "18 a 29 años",
-                                     Q262>29 & Q262<=49 ~ "30 a 49 años",
-                                     Q262>49 ~ "Más de 50 años")) %>% na.omit() %>%
-  group_by(Indicador) %>% summarise(D_INTERVIEW=n())%>% mutate(n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
-edad
-
-educ <- df %>% mutate(Indicador= case_when(Q275R==1 ~ "Básico",
-                                     Q275R==2 ~ "Medio",
-                                     Q275R==3 ~ "Superior")) %>% na.omit() %>%
-  group_by(Indicador) %>% summarise(D_INTERVIEW=n())%>% mutate(n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
-educ
-
-rel <- df %>% mutate(Indicador= case_when(Q289==0 ~ "Ninguna",
-                                    Q289==1 ~ "Católica",
-                                    Q289==2 ~"Evangélica",
-                                    Q289>2 ~"Otra")) %>% na.omit() %>%
-  group_by(Indicador) %>% summarise(D_INTERVIEW=n())%>% mutate(n= D_INTERVIEW, Porcentaje= round((n/sum(n)*100),1)) %>% select(Indicador, n, Porcentaje)
-rel
-
-tab2 <- data.frame(Indicador="N", n= 1000, Porcentaje = 100)
-tab2 <- rbind(tab2, sexo, edad, zona, educ, rel)
-
-```
-
 ```{r, echo=F}
+
+tab31 <- readRDS("ipo/output/muestra.rds")
 
 create_table2 <- function(df) {
   if (is_word_output()) {
-    tab2 %>% mutate(concepto= c("Total muestra",rep("Sexo", 2),
+    tab31 %>% mutate(concepto= c("Total muestra",rep("Sexo", 2),
                                     rep("Edad", 3),
                                     rep("Zona", 2),
                                 rep("Nivel Educacional", 3),
@@ -70,7 +33,7 @@ create_table2 <- function(df) {
   bold(i = ~ !is.na(concepto))  %>% set_header_labels(what = "") %>%
       colformat_num(big.mark = ".", decimal.mark = ",")
   } else {
-    kable(tab2, booktabs= TRUE,
+    kable(tab31, booktabs= TRUE,
     escape = FALSE,
     caption = "Resumen muestra", align = "c",
     position= "h", centering= F, format.args = list(decimal.mark=",")) %>%
@@ -88,7 +51,7 @@ create_table2 <- function(df) {
   }
 }
 
-create_table2(tab2)
+create_table2(tab31)
 ```
 
 \FloatBarrier
@@ -96,12 +59,6 @@ create_table2(tab2)
 ## Variables
 
 ### Variable dependiente {-}
-
-```{r, include=F, echo=FALSE}
-
-dd <- df %>% select(c(Q235, Q236)) %>% na.omit()
-alpha(dd)
-```
 
 La variable dependiente es el apoyo a la democracia delegativa, que se midió a través de un índice sumativo compuesto por dos ítems: i) la valoración sobre qué tan bueno es *tener un líder fuerte que no se preocupe por el congreso y las elecciones*, que es una pregunta que ha sido previamente utilizada para medir el apoyo a la democracia delegativa en contextos asiáticos [@kang2018]; y ii) la valoración sobre qué tan bueno es *tener expertos, en lugar de un gobierno, tomando decisiones de acuerdo a lo que ellos creen que es mejor para el país*, considerando la impronta tecnocrática de la democracia delegativa [@odonnell1994].
 
@@ -209,7 +166,8 @@ create_table3 <- function(df) {
   bold( bold = TRUE, part="header") %>% 
   align(i = ~ !is.na(concepto), align = "left") %>% 
   bold(i = ~ !is.na(concepto))  %>% set_header_labels(what = "") %>%
-      hline(i= c(7, 13, 19, 22, 26, 30))
+      hline(i= c(7, 13, 19, 22, 26, 30)) %>%
+      fix_border_issues(part = "all")
   } else {
     kable(tab3, booktabs= TRUE,
     escape = FALSE,
@@ -235,7 +193,7 @@ create_table3(tab3)
 
 ### Variables de control {-}
 
-Se incluirán variables de control, principalmente aquellas relacionadas con características sociodemográficas que se ha observado se relacionan con el apoyo a la democracia. De tal modo, se incluirán en el modelo la autoidentificación política en el espectro izquierda-derecha, el sexo, la edad, el nivel educacional y la identificación religiosa y zona de residencia (urbano-rural) [@navia2019; @gidron2020; @eskelinen2020; @schafft2021; @deppisch2022]. Dado que se ha observado que tanto el estatus socioeconómico subjetivo [@nowakowski2021;@gidron2020] como objetivo [@xuereb2021], se incluyeron indicadores para ambos. En el caso del estatus subjetivo, se incluyó la variable de ingresos subjetivos. Para estatus objetivo, se tomó una variable sobre grupo ocupacional que puede ser fácilmente recodificada para aproximarse a los tres grupos principales delineados por el esquema de clases de Goldthorpe: clase de servicio, clases intermedias y clase trabajadora [@regidor2001].
+Se incluirán variables de control, principalmente aquellas relacionadas con características sociodemográficas que se ha observado se relacionan con el apoyo a la democracia. De tal modo, se incluirán en el modelo la autoidentificación política en el espectro izquierda-derecha, el sexo, la edad, el nivel educacional y la identificación religiosa y zona de residencia (urbano-rural) y tamaño de ciudad [@navia2019; @gidron2020; @eskelinen2020; @schafft2021; @deppisch2022]. Dado que se ha observado que tanto el estatus socioeconómico subjetivo [@nowakowski2021;@gidron2020] como objetivo [@xuereb2021], se incluyeron indicadores para ambos. En el caso del estatus subjetivo, se incluyó la variable de ingresos subjetivos. Para estatus objetivo, se tomó una variable sobre grupo ocupacional que puede ser fácilmente recodificada para aproximarse a los tres grupos principales delineados por el esquema de clases de Goldthorpe: clase de servicio, clases intermedias y clase trabajadora [@regidor2001].
 
 Los indicadores seleccionados como variables de control se resumen a continuación en la tabla 3.3.
 
@@ -279,17 +237,15 @@ create_table33 <- function(df) {
   font(fontname = "Helvetica", part="all") %>%
   fontsize(size=11, part="all") %>%
   flextable::set_caption("Resumen Variables de Control") %>%
-      footnote(i=c(4,5,6,7,8,19,20,21),
+      footnote(i=c(20,21,22),
                j=2,
-              value = as_paragraph(c("Del 7 al 10, en una escala del 1 al 10",
-                                        "Del 4 al 6, en una escala del 1 al 10",
-                                        "Del 1 al 3, en una escala del 1 al 10",
-                                        "Profesionales y funcionarios administrativos superiores",
+              value = as_paragraph(c("Profesionales y funcionarios administrativos superiores",
                                         "Cargos administrativos medios; pequeños y medianos empresarios",
                                         "Trabajadores manuales o agrícolas, cualificados y no-cualificados")),
-              ref_symbols = c("a", "b", "c", "d", "e", "f", "g", "h"),
+              ref_symbols = c("a", "b", "c"),
               inline = F) %>%
-      hline(i= c(2, 3, 7, 8, 12, 16, 19))
+      hline(i= c(2, 3, 9, 11, 15, 19)) %>%
+      fix_border_issues(part = "all")
   } else {
     tab33 %>%
     kable(booktabs= TRUE,
